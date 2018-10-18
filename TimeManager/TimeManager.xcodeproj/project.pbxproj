@@ -7,14 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		035FA65B2178DDCB005B1BEB /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035FA65A2178DDCB005B1BEB /* ProjectsViewController.swift */; };
+		035FA65D2178DDE0005B1BEB /* ProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035FA65C2178DDE0005B1BEB /* ProjectDetailViewController.swift */; };
+		035FA6612178DE76005B1BEB /* AddTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035FA6602178DE76005B1BEB /* AddTimeViewController.swift */; };
+		035FA6632178DE8C005B1BEB /* AddProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035FA6622178DE8C005B1BEB /* AddProjectViewController.swift */; };
+		035FA6662178E293005B1BEB /* CustomSkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035FA6652178E293005B1BEB /* CustomSkyFloatingLabelTextField.swift */; };
 		039A473D2178D4D100233F36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039A473C2178D4D100233F36 /* AppDelegate.swift */; };
-		039A473F2178D4D100233F36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039A473E2178D4D100233F36 /* ViewController.swift */; };
 		039A47422178D4D100233F36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 039A47402178D4D100233F36 /* Main.storyboard */; };
 		039A47452178D4D100233F36 /* TimeManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 039A47432178D4D100233F36 /* TimeManager.xcdatamodeld */; };
 		039A47472178D4D200233F36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 039A47462178D4D200233F36 /* Assets.xcassets */; };
 		039A474A2178D4D200233F36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 039A47482178D4D200233F36 /* LaunchScreen.storyboard */; };
 		039A47552178D4D200233F36 /* TimeManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039A47542178D4D200233F36 /* TimeManagerTests.swift */; };
 		039A47602178D4D200233F36 /* TimeManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039A475F2178D4D200233F36 /* TimeManagerUITests.swift */; };
+		0EF4906C2A68FC05FE7293F1 /* Pods_TimeManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25FB122BF247C5391171C744 /* Pods_TimeManager.framework */; };
+		95AF1320A89D6133D48044F4 /* Pods_TimeManagerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FB995DA7B7463F3AE25EEB /* Pods_TimeManagerUITests.framework */; };
+		C7E3BEE13FD155824881086D /* Pods_TimeManagerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C922E1F4E5D66B646F605F26 /* Pods_TimeManagerTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +42,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		035FA65A2178DDCB005B1BEB /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
+		035FA65C2178DDE0005B1BEB /* ProjectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewController.swift; sourceTree = "<group>"; };
+		035FA6602178DE76005B1BEB /* AddTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTimeViewController.swift; sourceTree = "<group>"; };
+		035FA6622178DE8C005B1BEB /* AddProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectViewController.swift; sourceTree = "<group>"; };
+		035FA6652178E293005B1BEB /* CustomSkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSkyFloatingLabelTextField.swift; sourceTree = "<group>"; };
 		039A47392178D4D100233F36 /* TimeManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		039A473C2178D4D100233F36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		039A473E2178D4D100233F36 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		039A47412178D4D100233F36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		039A47442178D4D100233F36 /* TimeManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TimeManager.xcdatamodel; sourceTree = "<group>"; };
 		039A47462178D4D200233F36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +60,15 @@
 		039A475B2178D4D200233F36 /* TimeManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		039A475F2178D4D200233F36 /* TimeManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManagerUITests.swift; sourceTree = "<group>"; };
 		039A47612178D4D200233F36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10D8E31A750B8FF5A21C9A06 /* Pods-TimeManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeManager/Pods-TimeManager.release.xcconfig"; sourceTree = "<group>"; };
+		25FB122BF247C5391171C744 /* Pods_TimeManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		285B99D2F00D4143192D85B9 /* Pods-TimeManagerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeManagerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeManagerUITests/Pods-TimeManagerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		43F15D278C4956ED0242A7BB /* Pods-TimeManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeManager/Pods-TimeManager.debug.xcconfig"; sourceTree = "<group>"; };
+		52FB995DA7B7463F3AE25EEB /* Pods_TimeManagerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeManagerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95A437E0644B7F922618F4B1 /* Pods-TimeManagerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeManagerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeManagerTests/Pods-TimeManagerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9BC632BA8996F95CF29F6568 /* Pods-TimeManagerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeManagerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeManagerUITests/Pods-TimeManagerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C922E1F4E5D66B646F605F26 /* Pods_TimeManagerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeManagerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFF2C0D4243A7E09C4A984D5 /* Pods-TimeManagerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeManagerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeManagerTests/Pods-TimeManagerTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EF4906C2A68FC05FE7293F1 /* Pods_TimeManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7E3BEE13FD155824881086D /* Pods_TimeManagerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +92,93 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95AF1320A89D6133D48044F4 /* Pods_TimeManagerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		035FA6512178DC63005B1BEB /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				039A47482178D4D200233F36 /* LaunchScreen.storyboard */,
+				039A473C2178D4D100233F36 /* AppDelegate.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		035FA6522178DC7D005B1BEB /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		035FA6532178DC9B005B1BEB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		035FA6542178DCA2005B1BEB /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		035FA6552178DCAC005B1BEB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		035FA6562178DCB5005B1BEB /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		035FA6572178DCBE005B1BEB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				035FA65A2178DDCB005B1BEB /* ProjectsViewController.swift */,
+				035FA65C2178DDE0005B1BEB /* ProjectDetailViewController.swift */,
+				035FA6622178DE8C005B1BEB /* AddProjectViewController.swift */,
+				035FA6602178DE76005B1BEB /* AddTimeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		035FA6582178DCD6005B1BEB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				039A47402178D4D100233F36 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		035FA6592178DCDE005B1BEB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				039A474B2178D4D200233F36 /* Info.plist */,
+				039A47462178D4D200233F36 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		035FA6642178E252005B1BEB /* CustomClasses */ = {
+			isa = PBXGroup;
+			children = (
+				035FA6652178E293005B1BEB /* CustomSkyFloatingLabelTextField.swift */,
+			);
+			path = CustomClasses;
+			sourceTree = "<group>";
+		};
 		039A47302178D4D100233F36 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +186,8 @@
 				039A47532178D4D200233F36 /* TimeManagerTests */,
 				039A475E2178D4D200233F36 /* TimeManagerUITests */,
 				039A473A2178D4D100233F36 /* Products */,
+				09B6236ECDF4456ADAB1C5C5 /* Pods */,
+				9B3E1AE1A917DAC41BD2B081 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,12 +204,16 @@
 		039A473B2178D4D100233F36 /* TimeManager */ = {
 			isa = PBXGroup;
 			children = (
-				039A473C2178D4D100233F36 /* AppDelegate.swift */,
-				039A473E2178D4D100233F36 /* ViewController.swift */,
-				039A47402178D4D100233F36 /* Main.storyboard */,
-				039A47462178D4D200233F36 /* Assets.xcassets */,
-				039A47482178D4D200233F36 /* LaunchScreen.storyboard */,
-				039A474B2178D4D200233F36 /* Info.plist */,
+				035FA6512178DC63005B1BEB /* Base */,
+				035FA6642178E252005B1BEB /* CustomClasses */,
+				035FA6522178DC7D005B1BEB /* Configurator */,
+				035FA6562178DCB5005B1BEB /* DataManager */,
+				035FA6552178DCAC005B1BEB /* Models */,
+				035FA6532178DC9B005B1BEB /* ViewModel */,
+				035FA6542178DCA2005B1BEB /* Presenters */,
+				035FA6572178DCBE005B1BEB /* Controllers */,
+				035FA6582178DCD6005B1BEB /* View */,
+				035FA6592178DCDE005B1BEB /* Resources */,
 				039A47432178D4D100233F36 /* TimeManager.xcdatamodeld */,
 			);
 			path = TimeManager;
@@ -128,6 +237,29 @@
 			path = TimeManagerUITests;
 			sourceTree = "<group>";
 		};
+		09B6236ECDF4456ADAB1C5C5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				43F15D278C4956ED0242A7BB /* Pods-TimeManager.debug.xcconfig */,
+				10D8E31A750B8FF5A21C9A06 /* Pods-TimeManager.release.xcconfig */,
+				95A437E0644B7F922618F4B1 /* Pods-TimeManagerTests.debug.xcconfig */,
+				DFF2C0D4243A7E09C4A984D5 /* Pods-TimeManagerTests.release.xcconfig */,
+				285B99D2F00D4143192D85B9 /* Pods-TimeManagerUITests.debug.xcconfig */,
+				9BC632BA8996F95CF29F6568 /* Pods-TimeManagerUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9B3E1AE1A917DAC41BD2B081 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				25FB122BF247C5391171C744 /* Pods_TimeManager.framework */,
+				C922E1F4E5D66B646F605F26 /* Pods_TimeManagerTests.framework */,
+				52FB995DA7B7463F3AE25EEB /* Pods_TimeManagerUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +267,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 039A47642178D4D200233F36 /* Build configuration list for PBXNativeTarget "TimeManager" */;
 			buildPhases = (
+				2DBF36C8D16FB2EF61780F90 /* [CP] Check Pods Manifest.lock */,
 				039A47352178D4D100233F36 /* Sources */,
 				039A47362178D4D100233F36 /* Frameworks */,
 				039A47372178D4D100233F36 /* Resources */,
+				C8C870F38E9F4A1037457706 /* [CP] Embed Pods Frameworks */,
+				9398B23971C0ACD5CE151F47 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +287,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 039A47672178D4D200233F36 /* Build configuration list for PBXNativeTarget "TimeManagerTests" */;
 			buildPhases = (
+				C9181E2957C20B613C26F6D5 /* [CP] Check Pods Manifest.lock */,
 				039A474C2178D4D200233F36 /* Sources */,
 				039A474D2178D4D200233F36 /* Frameworks */,
 				039A474E2178D4D200233F36 /* Resources */,
+				6C51746D442F97658597F506 /* [CP] Embed Pods Frameworks */,
+				10A31133C49E6541ACE1C66A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +308,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 039A476A2178D4D200233F36 /* Build configuration list for PBXNativeTarget "TimeManagerUITests" */;
 			buildPhases = (
+				CBF9BD18A0694264CCDF2164 /* [CP] Check Pods Manifest.lock */,
 				039A47572178D4D200233F36 /* Sources */,
 				039A47582178D4D200233F36 /* Frameworks */,
 				039A47592178D4D200233F36 /* Resources */,
+				099A2FB26EBB21D0C4D9BF77 /* [CP] Embed Pods Frameworks */,
+				93BD0183B50C6B25A40458C6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,12 +395,168 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		099A2FB26EBB21D0C4D9BF77 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimeManagerUITests/Pods-TimeManagerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		10A31133C49E6541ACE1C66A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimeManagerTests/Pods-TimeManagerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2DBF36C8D16FB2EF61780F90 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TimeManager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C51746D442F97658597F506 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimeManagerTests/Pods-TimeManagerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9398B23971C0ACD5CE151F47 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimeManager/Pods-TimeManager-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93BD0183B50C6B25A40458C6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimeManagerUITests/Pods-TimeManagerUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8C870F38E9F4A1037457706 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TimeManager/Pods-TimeManager-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MagicalRecord/MagicalRecord.framework",
+				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MagicalRecord.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimeManager/Pods-TimeManager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9181E2957C20B613C26F6D5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TimeManagerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBF9BD18A0694264CCDF2164 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TimeManagerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		039A47352178D4D100233F36 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				039A473F2178D4D100233F36 /* ViewController.swift in Sources */,
+				035FA6632178DE8C005B1BEB /* AddProjectViewController.swift in Sources */,
+				035FA6612178DE76005B1BEB /* AddTimeViewController.swift in Sources */,
+				035FA6662178E293005B1BEB /* CustomSkyFloatingLabelTextField.swift in Sources */,
+				035FA65B2178DDCB005B1BEB /* ProjectsViewController.swift in Sources */,
+				035FA65D2178DDE0005B1BEB /* ProjectDetailViewController.swift in Sources */,
 				039A473D2178D4D100233F36 /* AppDelegate.swift in Sources */,
 				039A47452178D4D100233F36 /* TimeManager.xcdatamodeld in Sources */,
 			);
@@ -367,7 +664,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -422,7 +719,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -434,10 +731,13 @@
 		};
 		039A47652178D4D200233F36 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43F15D278C4956ED0242A7BB /* Pods-TimeManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TimeManager/Info.plist;
+				DEVELOPMENT_TEAM = RU8NX52YL8;
+				INFOPLIST_FILE = "$(SRCROOT)/TimeManager/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -451,10 +751,13 @@
 		};
 		039A47662178D4D200233F36 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10D8E31A750B8FF5A21C9A06 /* Pods-TimeManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TimeManager/Info.plist;
+				DEVELOPMENT_TEAM = RU8NX52YL8;
+				INFOPLIST_FILE = "$(SRCROOT)/TimeManager/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -468,6 +771,7 @@
 		};
 		039A47682178D4D200233F36 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95A437E0644B7F922618F4B1 /* Pods-TimeManagerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -488,6 +792,7 @@
 		};
 		039A47692178D4D200233F36 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFF2C0D4243A7E09C4A984D5 /* Pods-TimeManagerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +813,7 @@
 		};
 		039A476B2178D4D200233F36 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 285B99D2F00D4143192D85B9 /* Pods-TimeManagerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -527,6 +833,7 @@
 		};
 		039A476C2178D4D200233F36 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BC632BA8996F95CF29F6568 /* Pods-TimeManagerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
