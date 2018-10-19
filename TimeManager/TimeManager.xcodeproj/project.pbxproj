@@ -19,6 +19,18 @@
 		039A474A2178D4D200233F36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 039A47482178D4D200233F36 /* LaunchScreen.storyboard */; };
 		039A47552178D4D200233F36 /* TimeManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039A47542178D4D200233F36 /* TimeManagerTests.swift */; };
 		039A47602178D4D200233F36 /* TimeManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039A475F2178D4D200233F36 /* TimeManagerUITests.swift */; };
+		03DA2AA62179CB5000212A94 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA2AA42179CB5000212A94 /* ProjectTableViewCell.swift */; };
+		03DA2AA72179CB5000212A94 /* ProjectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03DA2AA52179CB5000212A94 /* ProjectTableViewCell.xib */; };
+		03DA2AA92179D8BB00212A94 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA2AA82179D8BB00212A94 /* ProjectModel.swift */; };
+		03DA2AAB2179D8DD00212A94 /* TimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA2AAA2179D8DD00212A94 /* TimeModel.swift */; };
+		03DA2AAD2179D8F400212A94 /* CustomerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA2AAC2179D8F400212A94 /* CustomerModel.swift */; };
+		03DA2AAF2179DB1800212A94 /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA2AAE2179DB1800212A94 /* ProjectViewModel.swift */; };
+		03DA2AB12179E2FC00212A94 /* ProjectDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA2AB02179E2FC00212A94 /* ProjectDetailViewModel.swift */; };
+		03DA2AB32179E63D00212A94 /* TimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA2AB22179E63D00212A94 /* TimeViewModel.swift */; };
+		03DA2AB62179F51C00212A94 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA2AB52179F51C00212A94 /* DateExtension.swift */; };
+		03DA2AB82179F66400212A94 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA2AB72179F66400212A94 /* StringExtension.swift */; };
+		03DA2ABA2179FAD100212A94 /* AddTimePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA2AB92179FAD100212A94 /* AddTimePresenter.swift */; };
+		03DA2ABC2179FDA100212A94 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA2ABB2179FDA100212A94 /* DataManager.swift */; };
 		0EF4906C2A68FC05FE7293F1 /* Pods_TimeManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25FB122BF247C5391171C744 /* Pods_TimeManager.framework */; };
 		95AF1320A89D6133D48044F4 /* Pods_TimeManagerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FB995DA7B7463F3AE25EEB /* Pods_TimeManagerUITests.framework */; };
 		C7E3BEE13FD155824881086D /* Pods_TimeManagerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C922E1F4E5D66B646F605F26 /* Pods_TimeManagerTests.framework */; };
@@ -60,6 +72,18 @@
 		039A475B2178D4D200233F36 /* TimeManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		039A475F2178D4D200233F36 /* TimeManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManagerUITests.swift; sourceTree = "<group>"; };
 		039A47612178D4D200233F36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03DA2AA42179CB5000212A94 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
+		03DA2AA52179CB5000212A94 /* ProjectTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectTableViewCell.xib; sourceTree = "<group>"; };
+		03DA2AA82179D8BB00212A94 /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
+		03DA2AAA2179D8DD00212A94 /* TimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeModel.swift; sourceTree = "<group>"; };
+		03DA2AAC2179D8F400212A94 /* CustomerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerModel.swift; sourceTree = "<group>"; };
+		03DA2AAE2179DB1800212A94 /* ProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
+		03DA2AB02179E2FC00212A94 /* ProjectDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewModel.swift; sourceTree = "<group>"; };
+		03DA2AB22179E63D00212A94 /* TimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeViewModel.swift; sourceTree = "<group>"; };
+		03DA2AB52179F51C00212A94 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		03DA2AB72179F66400212A94 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		03DA2AB92179FAD100212A94 /* AddTimePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTimePresenter.swift; sourceTree = "<group>"; };
+		03DA2ABB2179FDA100212A94 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		10D8E31A750B8FF5A21C9A06 /* Pods-TimeManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeManager/Pods-TimeManager.release.xcconfig"; sourceTree = "<group>"; };
 		25FB122BF247C5391171C744 /* Pods_TimeManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		285B99D2F00D4143192D85B9 /* Pods-TimeManagerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeManagerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeManagerUITests/Pods-TimeManagerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +142,9 @@
 		035FA6532178DC9B005B1BEB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				03DA2AAE2179DB1800212A94 /* ProjectViewModel.swift */,
+				03DA2AB02179E2FC00212A94 /* ProjectDetailViewModel.swift */,
+				03DA2AB22179E63D00212A94 /* TimeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -125,6 +152,7 @@
 		035FA6542178DCA2005B1BEB /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				03DA2AB92179FAD100212A94 /* AddTimePresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -132,6 +160,9 @@
 		035FA6552178DCAC005B1BEB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				03DA2AA82179D8BB00212A94 /* ProjectModel.swift */,
+				03DA2AAA2179D8DD00212A94 /* TimeModel.swift */,
+				03DA2AAC2179D8F400212A94 /* CustomerModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -139,6 +170,7 @@
 		035FA6562178DCB5005B1BEB /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				03DA2ABB2179FDA100212A94 /* DataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -157,6 +189,7 @@
 		035FA6582178DCD6005B1BEB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				03DA2AA22179CB1500212A94 /* CustomCells */,
 				039A47402178D4D100233F36 /* Main.storyboard */,
 			);
 			path = View;
@@ -204,6 +237,7 @@
 		039A473B2178D4D100233F36 /* TimeManager */ = {
 			isa = PBXGroup;
 			children = (
+				03DA2AB42179F50900212A94 /* Extensions */,
 				035FA6512178DC63005B1BEB /* Base */,
 				035FA6642178E252005B1BEB /* CustomClasses */,
 				035FA6522178DC7D005B1BEB /* Configurator */,
@@ -235,6 +269,32 @@
 				039A47612178D4D200233F36 /* Info.plist */,
 			);
 			path = TimeManagerUITests;
+			sourceTree = "<group>";
+		};
+		03DA2AA22179CB1500212A94 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				03DA2AA32179CB2B00212A94 /* ProjectCell */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		03DA2AA32179CB2B00212A94 /* ProjectCell */ = {
+			isa = PBXGroup;
+			children = (
+				03DA2AA42179CB5000212A94 /* ProjectTableViewCell.swift */,
+				03DA2AA52179CB5000212A94 /* ProjectTableViewCell.xib */,
+			);
+			path = ProjectCell;
+			sourceTree = "<group>";
+		};
+		03DA2AB42179F50900212A94 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				03DA2AB52179F51C00212A94 /* DateExtension.swift */,
+				03DA2AB72179F66400212A94 /* StringExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		09B6236ECDF4456ADAB1C5C5 /* Pods */ = {
@@ -376,6 +436,7 @@
 				039A474A2178D4D200233F36 /* LaunchScreen.storyboard in Resources */,
 				039A47472178D4D200233F36 /* Assets.xcassets in Resources */,
 				039A47422178D4D100233F36 /* Main.storyboard in Resources */,
+				03DA2AA72179CB5000212A94 /* ProjectTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,13 +613,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03DA2AB12179E2FC00212A94 /* ProjectDetailViewModel.swift in Sources */,
+				03DA2AB62179F51C00212A94 /* DateExtension.swift in Sources */,
 				035FA6632178DE8C005B1BEB /* AddProjectViewController.swift in Sources */,
 				035FA6612178DE76005B1BEB /* AddTimeViewController.swift in Sources */,
+				03DA2AB82179F66400212A94 /* StringExtension.swift in Sources */,
+				03DA2AB32179E63D00212A94 /* TimeViewModel.swift in Sources */,
+				03DA2AA92179D8BB00212A94 /* ProjectModel.swift in Sources */,
+				03DA2ABC2179FDA100212A94 /* DataManager.swift in Sources */,
+				03DA2ABA2179FAD100212A94 /* AddTimePresenter.swift in Sources */,
 				035FA6662178E293005B1BEB /* CustomSkyFloatingLabelTextField.swift in Sources */,
+				03DA2AAF2179DB1800212A94 /* ProjectViewModel.swift in Sources */,
+				03DA2AAB2179D8DD00212A94 /* TimeModel.swift in Sources */,
 				035FA65B2178DDCB005B1BEB /* ProjectsViewController.swift in Sources */,
 				035FA65D2178DDE0005B1BEB /* ProjectDetailViewController.swift in Sources */,
 				039A473D2178D4D100233F36 /* AppDelegate.swift in Sources */,
+				03DA2AAD2179D8F400212A94 /* CustomerModel.swift in Sources */,
 				039A47452178D4D100233F36 /* TimeManager.xcdatamodeld in Sources */,
+				03DA2AA62179CB5000212A94 /* ProjectTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
