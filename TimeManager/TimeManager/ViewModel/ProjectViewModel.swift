@@ -9,12 +9,16 @@
 import Foundation
 
 class ProjectViewModel {
+    // MARK: - variables fot ProjectTableView  -
     var project: ProjectModel
     var title: String? {
         return self.project.title
     }
     var customerName: String? {
         return self.project.customerName
+    }
+    var id: Int? {
+        return self.project.id
     }
     var totalTimeSpent: String? {
         var hoursSpent: Int = 0
@@ -40,6 +44,37 @@ class ProjectViewModel {
         return totalTimeSpentString
     }
     
+    // MARK: - additional variables for Project Detail  -
+    var desc: String? {
+        return self.project.desc
+    }
+    var customerMobile: String? {
+        return self.project.customerMobile
+    }
+    var customerEmail: String? {
+        return self.project.customerEmail
+    }
+    
+    // MARK: - timesForProjectDetail  -
+    var timesForProjectDetail: [ProjectDetailTimeViewModel] {
+        var times: [ProjectDetailTimeViewModel] = []
+        for time in self.project.times ?? [] {
+            let timeForProjectDetail = ProjectDetailTimeViewModel(time: time)
+            times.append(timeForProjectDetail)
+        }
+        return times
+    }
+    
+    // MARK: - timesForTimeDetail  -
+    var timesForTimeDetail: [TimeViewModel] {
+        var times: [TimeViewModel] = []
+        for time in self.project.times ?? [] {
+            let timeForTimeDetail = TimeViewModel(time: time)
+            times.append(timeForTimeDetail)
+        }
+        return times
+    }
+    // MARK: - init  -
     init(project: ProjectModel) {
         self.project = project
     }
