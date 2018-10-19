@@ -11,8 +11,20 @@ import Foundation
 class ProjectModel {
     var id: Int?
     var title: String?
-    var description: String?
+    var desc: String?
     var times: [TimeModel]?
-    var customer: CustomerModel?
+    var customerName: String?
+    var customerMobile: String?
+    var customerEmail: String?
+    
+    init(id: Int?, title: String?, desc: String?, times: [TimeModel]?, customerName: String?, customerMobile: String?, customerEmail: String?) {
+        self.id = id
+        self.title = title
+        self.desc = desc
+        self.times = times
+        self.customerName = customerName
+        self.customerMobile = customerMobile
+        self.customerEmail = customerEmail
+    }
 }
 

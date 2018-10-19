@@ -14,17 +14,17 @@ class ProjectDetailViewModel {
     var title: String? {
         return self.project.title
     }
-    var description: String? {
-        return self.project.description
+    var desc: String? {
+        return self.project.desc
     }
     var customerName: String? {
-        return self.project.customer?.name
+        return self.project.customerName
     }
     var customerMobile: String? {
-        return self.project.customer?.mobile
+        return self.project.customerMobile
     }
     var customerEmail: String? {
-        return self.project.customer?.email
+        return self.project.customerEmail
     }
     
     init(project: ProjectModel) {

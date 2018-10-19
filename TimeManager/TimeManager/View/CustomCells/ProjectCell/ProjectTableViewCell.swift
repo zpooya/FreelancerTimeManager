@@ -26,7 +26,9 @@ class ProjectTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     // MARK: - IBAction  -
-    @IBAction func addTime(_ sender: Any) {
+    @IBAction func addTime(_ sender: UIButton) {
+    }
+    @IBAction func deleteProject(_ sender: Any) {
     }
     
     // MARK: - Public SetContent -

@@ -20,16 +20,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="cYV-Vp-Zgk">
-                        <rect key="frame" x="16" y="16" width="246" height="74.5"/>
+                        <rect key="frame" x="16" y="16" width="292" height="74.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C63-Js-XSh">
-                                <rect key="frame" x="0.0" y="0.0" width="246" height="20.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="292" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkf-Im-Pyi">
-                                <rect key="frame" x="0.0" y="55" width="246" height="19.5"/>
+                                <rect key="frame" x="0.0" y="55" width="292" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -45,47 +45,61 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgN-CK-eNt">
-                        <rect key="frame" x="278" y="8" width="66" height="30"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgN-CK-eNt">
+                        <rect key="frame" x="324" y="8" width="20" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="4xW-qw-Xi6"/>
-                            <constraint firstAttribute="width" constant="66" id="sX3-vf-rRj"/>
+                            <constraint firstAttribute="height" constant="20" id="4xW-qw-Xi6"/>
+                            <constraint firstAttribute="width" constant="20" id="sX3-vf-rRj"/>
                         </constraints>
-                        <state key="normal" title="Add Time"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" image="delete"/>
                         <connections>
-                            <action selector="addTime:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="5w5-af-rNn"/>
+                            <action selector="deleteProject:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0dX-rt-6E9"/>
                         </connections>
                     </button>
                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahG-XY-npP">
-                        <rect key="frame" x="322" y="55.5" width="22" height="22"/>
+                        <rect key="frame" x="329" y="59" width="15" height="15"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="22" id="2nv-Zk-0Cx"/>
+                            <constraint firstAttribute="height" constant="15" id="2nv-Zk-0Cx"/>
                             <constraint firstAttribute="width" secondItem="ahG-XY-npP" secondAttribute="height" multiplier="1:1" id="h5S-nX-yal"/>
                         </constraints>
                         <color key="tintColor" white="0.0" alpha="0.42457726883561642" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" image="right-arrow-icon"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcE-1c-5tG">
-                        <rect key="frame" x="157.5" y="107" width="178.5" height="17"/>
+                        <rect key="frame" x="157.5" y="107" width="120.5" height="17"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NqR-uU-NRM">
+                        <rect key="frame" x="286" y="96.5" width="58" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="58" id="Din-1c-g1H"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="Add Time"/>
+                        <connections>
+                            <action selector="addTime:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="8dE-Wc-0by"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="ahG-XY-npP" secondAttribute="trailing" constant="8" id="1fY-va-xjT"/>
                     <constraint firstItem="cYV-Vp-Zgk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="597-Bv-QcI"/>
                     <constraint firstAttribute="trailing" secondItem="qgN-CK-eNt" secondAttribute="trailing" constant="8" id="9jI-mN-qRR"/>
+                    <constraint firstAttribute="bottom" secondItem="NqR-uU-NRM" secondAttribute="bottom" constant="8" id="PrZ-GH-YYI"/>
                     <constraint firstItem="ahG-XY-npP" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="QJm-Zq-YuQ"/>
                     <constraint firstItem="Gcy-fy-17f" firstAttribute="top" secondItem="cYV-Vp-Zgk" secondAttribute="bottom" constant="16" id="Vd9-KP-0bL"/>
                     <constraint firstItem="cYV-Vp-Zgk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="dJY-wT-u6z"/>
+                    <constraint firstAttribute="trailing" secondItem="NqR-uU-NRM" secondAttribute="trailing" constant="8" id="dXe-1N-rMp"/>
                     <constraint firstAttribute="bottom" secondItem="Gcy-fy-17f" secondAttribute="bottom" constant="8" id="djh-yO-ytT"/>
                     <constraint firstItem="VcE-1c-5tG" firstAttribute="centerY" secondItem="Gcy-fy-17f" secondAttribute="centerY" id="fGC-Oh-RBB"/>
                     <constraint firstItem="VcE-1c-5tG" firstAttribute="leading" secondItem="Gcy-fy-17f" secondAttribute="trailing" constant="8" id="g9j-1e-CkD"/>
                     <constraint firstItem="qgN-CK-eNt" firstAttribute="leading" secondItem="cYV-Vp-Zgk" secondAttribute="trailing" constant="16" id="hEC-4k-fhA"/>
+                    <constraint firstItem="NqR-uU-NRM" firstAttribute="leading" secondItem="VcE-1c-5tG" secondAttribute="trailing" constant="8" id="qK4-4a-25t"/>
                     <constraint firstItem="Gcy-fy-17f" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="tOD-YQ-wne"/>
                     <constraint firstItem="qgN-CK-eNt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="xe7-Gr-65v"/>
-                    <constraint firstAttribute="trailing" secondItem="VcE-1c-5tG" secondAttribute="trailing" constant="16" id="yCK-ws-PKa"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -98,6 +112,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="delete" width="35.200000762939453" height="35.200000762939453"/>
         <image name="right-arrow-icon" width="128" height="128"/>
     </resources>
 </document>

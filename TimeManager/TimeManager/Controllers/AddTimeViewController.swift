@@ -25,6 +25,7 @@ class AddTimeViewController: UIViewController {
     // MARK: - override  -
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setPresenter()
         self.addTargetToPickers()
         self.setupView()
     }

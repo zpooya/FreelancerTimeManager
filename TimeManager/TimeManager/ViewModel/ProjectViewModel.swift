@@ -14,7 +14,7 @@ class ProjectViewModel {
         return self.project.title
     }
     var customerName: String? {
-        return self.project.customer?.name
+        return self.project.customerName
     }
     var totalTimeSpent: String? {
         var hoursSpent: Int = 0

@@ -13,4 +13,10 @@ class TimeModel {
     var date: String?
     var hourSpent: Int?
     var minuteSpent: Int?
+    init(id: Int?, date: String?, hourSpent: Int, minuteSpent: Int) {
+        self.id = id
+        self.date = date
+        self.hourSpent = hourSpent
+        self.minuteSpent = minuteSpent
+    }
 }

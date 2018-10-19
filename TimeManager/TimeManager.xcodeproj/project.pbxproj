@@ -23,7 +23,6 @@
 		03DA2AA72179CB5000212A94 /* ProjectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03DA2AA52179CB5000212A94 /* ProjectTableViewCell.xib */; };
 		03DA2AA92179D8BB00212A94 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA2AA82179D8BB00212A94 /* ProjectModel.swift */; };
 		03DA2AAB2179D8DD00212A94 /* TimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA2AAA2179D8DD00212A94 /* TimeModel.swift */; };
-		03DA2AAD2179D8F400212A94 /* CustomerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA2AAC2179D8F400212A94 /* CustomerModel.swift */; };
 		03DA2AAF2179DB1800212A94 /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA2AAE2179DB1800212A94 /* ProjectViewModel.swift */; };
 		03DA2AB12179E2FC00212A94 /* ProjectDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA2AB02179E2FC00212A94 /* ProjectDetailViewModel.swift */; };
 		03DA2AB32179E63D00212A94 /* TimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA2AB22179E63D00212A94 /* TimeViewModel.swift */; };
@@ -76,7 +75,6 @@
 		03DA2AA52179CB5000212A94 /* ProjectTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectTableViewCell.xib; sourceTree = "<group>"; };
 		03DA2AA82179D8BB00212A94 /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
 		03DA2AAA2179D8DD00212A94 /* TimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeModel.swift; sourceTree = "<group>"; };
-		03DA2AAC2179D8F400212A94 /* CustomerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerModel.swift; sourceTree = "<group>"; };
 		03DA2AAE2179DB1800212A94 /* ProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
 		03DA2AB02179E2FC00212A94 /* ProjectDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewModel.swift; sourceTree = "<group>"; };
 		03DA2AB22179E63D00212A94 /* TimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeViewModel.swift; sourceTree = "<group>"; };
@@ -162,7 +160,6 @@
 			children = (
 				03DA2AA82179D8BB00212A94 /* ProjectModel.swift */,
 				03DA2AAA2179D8DD00212A94 /* TimeModel.swift */,
-				03DA2AAC2179D8F400212A94 /* CustomerModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -628,7 +625,6 @@
 				035FA65B2178DDCB005B1BEB /* ProjectsViewController.swift in Sources */,
 				035FA65D2178DDE0005B1BEB /* ProjectDetailViewController.swift in Sources */,
 				039A473D2178D4D100233F36 /* AppDelegate.swift in Sources */,
-				03DA2AAD2179D8F400212A94 /* CustomerModel.swift in Sources */,
 				039A47452178D4D100233F36 /* TimeManager.xcdatamodeld in Sources */,
 				03DA2AA62179CB5000212A94 /* ProjectTableViewCell.swift in Sources */,
 			);
