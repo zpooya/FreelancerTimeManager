@@ -46,6 +46,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vpm-jj-kLz">
                                         <rect key="frame" x="0.0" y="29.5" width="105" height="21.5"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="21.5" id="eRu-2T-HvU"/>
                                             <constraint firstAttribute="width" constant="105" id="nEN-4i-ElJ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
