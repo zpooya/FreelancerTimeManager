@@ -34,6 +34,14 @@
 		03DA2AC2217A866600212A94 /* ProjectConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA2AC1217A866600212A94 /* ProjectConfigurator.swift */; };
 		03DA2AC4217A9A9A00212A94 /* AddProjectPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA2AC3217A9A9A00212A94 /* AddProjectPresenter.swift */; };
 		03DA2AC6217A9AAA00212A94 /* ProjectDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA2AC5217A9AAA00212A94 /* ProjectDetailPresenter.swift */; };
+		03DA2ACD217AC95000212A94 /* TimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA2ACB217AC95000212A94 /* TimeTableViewCell.swift */; };
+		03DA2ACE217AC95000212A94 /* TimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03DA2ACC217AC95000212A94 /* TimeTableViewCell.xib */; };
+		03DA2AD1217AC96900212A94 /* TimeSectionHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA2ACF217AC96900212A94 /* TimeSectionHeaderTableViewCell.swift */; };
+		03DA2AD2217AC96900212A94 /* TimeSectionHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03DA2AD0217AC96900212A94 /* TimeSectionHeaderTableViewCell.xib */; };
+		03DA2AD5217AC98A00212A94 /* ProjectInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA2AD3217AC98A00212A94 /* ProjectInfoTableViewCell.swift */; };
+		03DA2AD6217AC98A00212A94 /* ProjectInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03DA2AD4217AC98A00212A94 /* ProjectInfoTableViewCell.xib */; };
+		03DA2ADB217ACF4200212A94 /* CustomerInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA2AD9217ACF4200212A94 /* CustomerInfoTableViewCell.swift */; };
+		03DA2ADC217ACF4200212A94 /* CustomerInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03DA2ADA217ACF4200212A94 /* CustomerInfoTableViewCell.xib */; };
 		0EF4906C2A68FC05FE7293F1 /* Pods_TimeManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25FB122BF247C5391171C744 /* Pods_TimeManager.framework */; };
 		95AF1320A89D6133D48044F4 /* Pods_TimeManagerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FB995DA7B7463F3AE25EEB /* Pods_TimeManagerUITests.framework */; };
 		C7E3BEE13FD155824881086D /* Pods_TimeManagerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C922E1F4E5D66B646F605F26 /* Pods_TimeManagerTests.framework */; };
@@ -90,6 +98,14 @@
 		03DA2AC1217A866600212A94 /* ProjectConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectConfigurator.swift; sourceTree = "<group>"; };
 		03DA2AC3217A9A9A00212A94 /* AddProjectPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectPresenter.swift; sourceTree = "<group>"; };
 		03DA2AC5217A9AAA00212A94 /* ProjectDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailPresenter.swift; sourceTree = "<group>"; };
+		03DA2ACB217AC95000212A94 /* TimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableViewCell.swift; sourceTree = "<group>"; };
+		03DA2ACC217AC95000212A94 /* TimeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeTableViewCell.xib; sourceTree = "<group>"; };
+		03DA2ACF217AC96900212A94 /* TimeSectionHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSectionHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		03DA2AD0217AC96900212A94 /* TimeSectionHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeSectionHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		03DA2AD3217AC98A00212A94 /* ProjectInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectInfoTableViewCell.swift; sourceTree = "<group>"; };
+		03DA2AD4217AC98A00212A94 /* ProjectInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectInfoTableViewCell.xib; sourceTree = "<group>"; };
+		03DA2AD9217ACF4200212A94 /* CustomerInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerInfoTableViewCell.swift; sourceTree = "<group>"; };
+		03DA2ADA217ACF4200212A94 /* CustomerInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomerInfoTableViewCell.xib; sourceTree = "<group>"; };
 		10D8E31A750B8FF5A21C9A06 /* Pods-TimeManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeManager/Pods-TimeManager.release.xcconfig"; sourceTree = "<group>"; };
 		25FB122BF247C5391171C744 /* Pods_TimeManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		285B99D2F00D4143192D85B9 /* Pods-TimeManagerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeManagerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeManagerUITests/Pods-TimeManagerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -283,6 +299,7 @@
 		03DA2AA22179CB1500212A94 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
+				03DA2AC7217AC8E200212A94 /* ProjectDetailCells */,
 				03DA2AA32179CB2B00212A94 /* ProjectCell */,
 			);
 			path = CustomCells;
@@ -304,6 +321,53 @@
 				03DA2AB72179F66400212A94 /* StringExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		03DA2AC7217AC8E200212A94 /* ProjectDetailCells */ = {
+			isa = PBXGroup;
+			children = (
+				03DA2AC8217AC8F000212A94 /* ProjectInfoCell */,
+				03DA2AD8217ACDC800212A94 /* CustomerInfo */,
+				03DA2AC9217AC8FF00212A94 /* SectionHeaderCell */,
+				03DA2ACA217AC90F00212A94 /* TimeCell */,
+			);
+			path = ProjectDetailCells;
+			sourceTree = "<group>";
+		};
+		03DA2AC8217AC8F000212A94 /* ProjectInfoCell */ = {
+			isa = PBXGroup;
+			children = (
+				03DA2AD3217AC98A00212A94 /* ProjectInfoTableViewCell.swift */,
+				03DA2AD4217AC98A00212A94 /* ProjectInfoTableViewCell.xib */,
+			);
+			path = ProjectInfoCell;
+			sourceTree = "<group>";
+		};
+		03DA2AC9217AC8FF00212A94 /* SectionHeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				03DA2ACF217AC96900212A94 /* TimeSectionHeaderTableViewCell.swift */,
+				03DA2AD0217AC96900212A94 /* TimeSectionHeaderTableViewCell.xib */,
+			);
+			path = SectionHeaderCell;
+			sourceTree = "<group>";
+		};
+		03DA2ACA217AC90F00212A94 /* TimeCell */ = {
+			isa = PBXGroup;
+			children = (
+				03DA2ACB217AC95000212A94 /* TimeTableViewCell.swift */,
+				03DA2ACC217AC95000212A94 /* TimeTableViewCell.xib */,
+			);
+			path = TimeCell;
+			sourceTree = "<group>";
+		};
+		03DA2AD8217ACDC800212A94 /* CustomerInfo */ = {
+			isa = PBXGroup;
+			children = (
+				03DA2AD9217ACF4200212A94 /* CustomerInfoTableViewCell.swift */,
+				03DA2ADA217ACF4200212A94 /* CustomerInfoTableViewCell.xib */,
+			);
+			path = CustomerInfo;
 			sourceTree = "<group>";
 		};
 		09B6236ECDF4456ADAB1C5C5 /* Pods */ = {
@@ -443,9 +507,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				039A474A2178D4D200233F36 /* LaunchScreen.storyboard in Resources */,
+				03DA2AD2217AC96900212A94 /* TimeSectionHeaderTableViewCell.xib in Resources */,
 				039A47472178D4D200233F36 /* Assets.xcassets in Resources */,
+				03DA2AD6217AC98A00212A94 /* ProjectInfoTableViewCell.xib in Resources */,
 				039A47422178D4D100233F36 /* Main.storyboard in Resources */,
 				03DA2AA72179CB5000212A94 /* ProjectTableViewCell.xib in Resources */,
+				03DA2ACE217AC95000212A94 /* TimeTableViewCell.xib in Resources */,
+				03DA2ADC217ACF4200212A94 /* CustomerInfoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -628,9 +696,12 @@
 				03DA2AC2217A866600212A94 /* ProjectConfigurator.swift in Sources */,
 				03DA2AB82179F66400212A94 /* StringExtension.swift in Sources */,
 				03DA2AB32179E63D00212A94 /* TimeViewModel.swift in Sources */,
+				03DA2ACD217AC95000212A94 /* TimeTableViewCell.swift in Sources */,
 				03DA2AA92179D8BB00212A94 /* ProjectModel.swift in Sources */,
 				03DA2ABC2179FDA100212A94 /* DataManager.swift in Sources */,
 				03DA2ABA2179FAD100212A94 /* AddTimePresenter.swift in Sources */,
+				03DA2ADB217ACF4200212A94 /* CustomerInfoTableViewCell.swift in Sources */,
+				03DA2AD1217AC96900212A94 /* TimeSectionHeaderTableViewCell.swift in Sources */,
 				035FA6662178E293005B1BEB /* CustomSkyFloatingLabelTextField.swift in Sources */,
 				03DA2AAF2179DB1800212A94 /* ProjectViewModel.swift in Sources */,
 				03DA2AAB2179D8DD00212A94 /* TimeModel.swift in Sources */,
@@ -643,6 +714,7 @@
 				039A47452178D4D100233F36 /* TimeManager.xcdatamodeld in Sources */,
 				03DA2AC0217A7EEC00212A94 /* ProjectsPresenter.swift in Sources */,
 				03DA2AA62179CB5000212A94 /* ProjectTableViewCell.swift in Sources */,
+				03DA2AD5217AC98A00212A94 /* ProjectInfoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

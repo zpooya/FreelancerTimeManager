@@ -20,9 +20,9 @@ class ProjectsViewController: UIViewController {
     let addActionTitle = "Add Project"
     let action1Title = "Ok"
     let action2Title = "Cancel"
+    
     // MARK: - IBOutlet  -
-   
-    @IBOutlet weak var handleErrorView: UIView! {
+       @IBOutlet weak var handleErrorView: UIView! {
         didSet {
             self.handleErrorView.isHidden = true
         }
@@ -122,15 +122,10 @@ extension ProjectsViewController: ProjectTableViewCellDelegate {
 
         self.presenter?.goToAddTime(controller: self, timeViewModel: nil, projectId: projectId)
     }
-    
-    
 }
 
 // MARK: - ProjectsPresenterDelegate  -
 extension ProjectsViewController: ProjectsPresenterDelegate {
-    func startLoading() {
-        
-    }
     
     func handleViewWithProject() {
         self.handleErrorView.isHidden = true
@@ -141,16 +136,6 @@ extension ProjectsViewController: ProjectsPresenterDelegate {
         self.projectsViewModel.removeAll()
         self.handleErrorView.isHidden = false
         self.projectsTableView.isHidden = true
-//        let alertController = UIAlertController(title: self.alerControllerTitle, message: self.alertControllerMessage, preferredStyle: .alert)
-//        let action1 = UIAlertAction(title: self.addActionTitle, style: .default) { (action:UIAlertAction) in
-//            self.presenter?.gotoAddProject(controller: self, projectViewModel: nil)
-//        }
-//        let action2 = UIAlertAction(title: self.action2Title, style: .cancel, handler: nil)
-//        alertController.addAction(action1)
-//        alertController.addAction(action2)
-//        alertController.popoverPresentationController?.sourceView = self.view
-//        self.present(alertController, animated: true, completion: nil)
-//
     }
     
     func setProjects(projectsViewModel: [ProjectViewModel]) {
@@ -165,7 +150,5 @@ extension ProjectsViewController: ProjectsPresenterDelegate {
         alertController.addAction(action1)
         alertController.popoverPresentationController?.sourceView = self.view
         self.present(alertController, animated: true, completion: nil)
-    }
-    
-    
+    }    
 }

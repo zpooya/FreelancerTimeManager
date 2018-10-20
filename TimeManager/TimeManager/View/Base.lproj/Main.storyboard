@@ -105,8 +105,14 @@
                     <navigationItem key="navigationItem" title="Project Detail" id="4uB-nf-gAR">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="3US-2E-Anb">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="editProjec:" destination="J5I-ca-5Kh" id="hcx-9S-bRs"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="projectDetailTableView" destination="QeR-uI-tX4" id="WsA-zF-zq3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rJT-JP-sX5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
