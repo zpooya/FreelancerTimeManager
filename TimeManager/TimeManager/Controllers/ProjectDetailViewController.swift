@@ -28,3 +28,9 @@ class ProjectDetailViewController: UIViewController {
     */
 
 }
+
+extension ProjectDetailViewController {
+    public func setContent(projectViewModel: ProjectViewModel) {
+        
+    }
+}

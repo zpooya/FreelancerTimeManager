@@ -20,7 +20,7 @@ class ProjectConfigurator {
         guard let controller = projectDetailViewController else {
             fatalError("could not make ProjectDetailViewController")
         }
-    //    controller.setContent(topStoryViewModel: data)
+        controller.setContent(projectViewModel: data)
         return controller
     }
     
@@ -35,7 +35,7 @@ class ProjectConfigurator {
         guard let controller = addProjectViewController else {
             fatalError("could not make AddProjectViewController")
         }
-      //  controller.setContent(seeMore: data)
+        controller.setContent(projectViewModel: data)
         return controller
     }
     
@@ -45,12 +45,12 @@ class ProjectConfigurator {
      - Parameter data: the initial data for **AddTimeViewController** which is of kind **TimeViewModel**.
      - returns: an istance of **AddTimeViewController**.
      */
-    static func createAddTimeViewController(withData data: TimeViewModel?) -> AddTimeViewController {
+    static func createAddTimeViewController(withData data: TimeViewModel?, projectId: Int) -> AddTimeViewController {
         let addTimeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddTimeViewController") as? AddTimeViewController
         guard let controller = addTimeViewController else {
             fatalError("could not make AddTimeViewController")
         }
-        controller.setContent(timeViewModel: data)
+        controller.setContent(timeViewModel: data, projectId: projectId)
         return controller
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fcg-CS-CMW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yFF-T3-MRu">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Projects View Controller-->
+        <!--Projects-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="ProjectsViewController" id="BYZ-38-t0r" customClass="ProjectsViewController" customModule="TimeManager" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,16 +32,24 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="4Ba-Cb-Kdn"/>
+                    <navigationItem key="navigationItem" title="Projects" id="4Ba-Cb-Kdn">
+                        <barButtonItem key="backBarButtonItem" title=" " id="LzR-Zt-6m8"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add Project" id="jzP-QY-sye">
+                            <connections>
+                                <action selector="goToAddProject:" destination="BYZ-38-t0r" id="5Y3-zJ-drp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="projectsTableView" destination="JrM-2n-Cvy" id="oPY-gb-Ye8"/>
+                        <segue destination="J5I-ca-5Kh" kind="show" identifier="fromProjectsToProject" id="fQ3-ul-33C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="764" y="-252"/>
         </scene>
-        <!--Project Detail View Controller-->
+        <!--Project Detail-->
         <scene sceneID="gQf-Vu-fDD">
             <objects>
                 <viewController storyboardIdentifier="ProjectDetailViewController" id="J5I-ca-5Kh" customClass="ProjectDetailViewController" customModule="TimeManager" customModuleProvider="target" sceneMemberID="viewController">
@@ -50,7 +58,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QeR-uI-tX4">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -63,6 +71,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7aI-b0-2Ps"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Project Detail" id="4uB-nf-gAR">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="3US-2E-Anb">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rJT-JP-sX5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -82,6 +95,15 @@
                                     <navigationItem title="Add Project" id="G0G-pM-h6q">
                                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="5kV-wm-9Mz">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="close:" destination="akA-1A-LPu" id="yoZ-8w-WQr"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="88z-pM-TZB">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="done:" destination="akA-1A-LPu" id="OBr-YE-Kng"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -140,10 +162,9 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="selectedLineHeight">
                                                                 <real key="value" value="2"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Title"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Title"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="Title"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Title"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Title*"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="Title*"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Title*"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DPc-Sh-dL6" customClass="CustomSkyFloatingLabelTextField" customModule="TimeManager" customModuleProvider="target">
@@ -188,7 +209,6 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="selectedLineHeight">
                                                                 <real key="value" value="2"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Description"/>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Description"/>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="Description"/>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="Description"/>
@@ -256,17 +276,16 @@
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="selectedLineHeight">
                                                                         <real key="value" value="2"/>
                                                                     </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Name"/>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Name"/>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="Name"/>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Name"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Name*"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="Name*"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Name*"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z8r-hW-SsJ" customClass="CustomSkyFloatingLabelTextField" customModule="TimeManager" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="52" width="343" height="40"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -304,7 +323,6 @@
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="selectedLineHeight">
                                                                         <real key="value" value="2"/>
                                                                     </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Mobile"/>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Mobile"/>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="Mobile"/>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Mobile"/>
@@ -314,7 +332,7 @@
                                                                 <rect key="frame" x="0.0" y="104" width="343" height="40"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -352,7 +370,6 @@
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="selectedLineHeight">
                                                                         <real key="value" value="2"/>
                                                                     </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Email"/>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email"/>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="Email"/>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Email"/>
@@ -387,6 +404,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bSK-zC-3ae"/>
                     </view>
+                    <connections>
+                        <outlet property="customNavigationBar" destination="MGp-AU-nqd" id="Ahc-38-qgA"/>
+                        <outlet property="customerEmailTextField" destination="JgP-CJ-1JG" id="4Wt-hY-xHn"/>
+                        <outlet property="customerMobileTextField" destination="z8r-hW-SsJ" id="HrN-gZ-EdM"/>
+                        <outlet property="customerNameTextField" destination="z2j-ty-p4x" id="bVD-EA-Zsh"/>
+                        <outlet property="navItem" destination="G0G-pM-h6q" id="7LC-5J-M2k"/>
+                        <outlet property="projectDescTextField" destination="DPc-Sh-dL6" id="Aoi-Ok-Eyg"/>
+                        <outlet property="projectTitleTextField" destination="HoQ-H7-0KU" id="rba-4I-6jA"/>
+                        <outletCollection property="textFields" destination="HoQ-H7-0KU" collectionClass="NSMutableArray" id="gXj-Wi-1je"/>
+                        <outletCollection property="textFields" destination="DPc-Sh-dL6" collectionClass="NSMutableArray" id="hbe-Zu-jhD"/>
+                        <outletCollection property="textFields" destination="z2j-ty-p4x" collectionClass="NSMutableArray" id="nxx-Lj-d9h"/>
+                        <outletCollection property="textFields" destination="z8r-hW-SsJ" collectionClass="NSMutableArray" id="HIY-9x-WM9"/>
+                        <outletCollection property="textFields" destination="JgP-CJ-1JG" collectionClass="NSMutableArray" id="chQ-Vb-smi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UoW-e7-APu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

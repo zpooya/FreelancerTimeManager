@@ -11,12 +11,13 @@ import UIKit
 class ProjectsViewController: UIViewController {
     
     // MARK: - Constant Variables  -
-    let pageTitle = "Top Stories"
+    let pageTitle = "Projects"
     let heightForRow: CGFloat = 133
     let numberOfSections: Int = 1
     let projectTableViewCellIdentifier = "ProjectTableViewCell"
-    let alerControllerTitle = "No Project"
+    let alerControllerTitle = "No Projects"
     let alertControllerMessage = "There are no projects, add One"
+    let addActionTitle = "Add Project"
     let action1Title = "Ok"
     let action2Title = "Cancel"
     // MARK: - IBOutlet  -
@@ -39,13 +40,22 @@ class ProjectsViewController: UIViewController {
     // MARK: - Override -
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setTitle()
+        self.setPresenter()
+        self.getProjects()
         // Do any additional setup after loading the view.
+    }
+}
+// MARK: - IBAction -
+extension ProjectsViewController {
+    @IBAction func goToAddProject(_ sender: UIBarButtonItem) {
+        
     }
 }
 // MARK: - setPresenter  -
 extension ProjectsViewController {
     private func setPresenter() {
-       // self.presenter = TopStoriesPresenter(delegate: self, network: TopStoriesNetwork())
+        self.presenter = ProjectsPresenter(delegate: self)
     }
 }
 // MARK: - SetupView -
@@ -57,7 +67,7 @@ extension ProjectsViewController {
 // MARK: - getProjects -
 extension ProjectsViewController {
     private func getProjects() {
-     //   self.presenter?.getTopStories()
+        self.presenter?.getProjects()
     }
 }
 // MARK: - UITableViewDataSource  -
@@ -70,7 +80,8 @@ extension ProjectsViewController: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.projectTableViewCellIdentifier, for: indexPath) as! ProjectTableViewCell
-        //cell.setContent(topStoryViewModel: self.topStoriesViewModel[indexPath.row])
+        cell.setContent(projectViewModel: self.projectsViewModel[indexPath.row])
+        cell.delegate = self
         return cell
     }
 }
@@ -80,6 +91,65 @@ extension ProjectsViewController: UITableViewDelegate {
         return self.heightForRow
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //self.presenter?.goToTopStoryDetail(controller: self, withData: self.topStoriesViewModel[indexPath.row])
+        self.presenter?.goToProjectDetail(controller: self, projectViewModel: self.projectsViewModel[indexPath.row])
     }
+}
+// MARK: - ProjectTableViewCellDelegate  -
+extension ProjectsViewController: ProjectTableViewCellDelegate {
+    func userDidSelectDeleteProject(projectViewModel: ProjectViewModel?) {
+        guard let projectId = projectViewModel?.id else {
+            return
+        }
+        self.presenter?.deleteProject(projectId: projectId)
+    }
+    
+    func userDidSelecAddTime(projectViewModel: ProjectViewModel?) {
+        guard let projectId = projectViewModel?.id else {
+            return
+        }
+
+        self.presenter?.goToAddTime(controller: self, timeViewModel: nil, projectId: projectId)
+    }
+    
+    
+}
+
+// MARK: - ProjectsPresenterDelegate  -
+extension ProjectsViewController: ProjectsPresenterDelegate {
+    func startLoading() {
+        
+    }
+    
+    func stopLoading() {
+        
+    }
+    
+    func handleEmptyProjects() {
+        let alertController = UIAlertController(title: self.alerControllerTitle, message: self.alertControllerMessage, preferredStyle: .alert)
+        let action1 = UIAlertAction(title: self.addActionTitle, style: .default) { (action:UIAlertAction) in
+            self.presenter?.gotoAddProject(controller: self, projectViewModel: nil)
+        }
+        let action2 = UIAlertAction(title: self.action2Title, style: .cancel, handler: nil)
+        alertController.addAction(action1)
+        alertController.addAction(action2)
+        alertController.popoverPresentationController?.sourceView = self.view
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
+    
+    func setProjects(projectsViewModel: [ProjectViewModel]) {
+        self.projectsViewModel = projectsViewModel
+    }
+    
+    func projectDeletedShowMessage(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action1 = UIAlertAction(title: self.action1Title, style: .default) { (action:UIAlertAction) in
+            self.presenter?.getProjects()
+        }
+        alertController.addAction(action1)
+        alertController.popoverPresentationController?.sourceView = self.view
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    
 }

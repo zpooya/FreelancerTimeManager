@@ -19,7 +19,7 @@ protocol ProjectsPresenterProtocol: class {
     func getProjects()
     func deleteProject(projectId: Int)
     func gotoAddProject(controller: ProjectsViewController, projectViewModel: ProjectViewModel?)
-    func goToAddTime(controller: ProjectsViewController, timeViewModel: TimeViewModel?)
+    func goToAddTime(controller: ProjectsViewController, timeViewModel: TimeViewModel?, projectId: Int)
     func goToProjectDetail(controller: ProjectsViewController, projectViewModel: ProjectViewModel)
 }
 class ProjectsPresenter {
@@ -82,8 +82,8 @@ extension ProjectsPresenter: ProjectsPresenterProtocol {
      - Parameter controller: the viewController which is of kind **ProjectsViewController** and is responsible of presenting the instance of **AddTimeViewController**.
      - Parameter data: the initial data needed to call the **createAddTimeViewController** method of **ProjectConfigurator** and make the instance of **AddTimeViewController**.
      */
-    func goToAddTime(controller: ProjectsViewController, timeViewModel: TimeViewModel?) {
-        let addTimeViewController = ProjectConfigurator.createAddTimeViewController(withData: timeViewModel)
+    func goToAddTime(controller: ProjectsViewController, timeViewModel: TimeViewModel?, projectId: Int) {
+        let addTimeViewController = ProjectConfigurator.createAddTimeViewController(withData: timeViewModel, projectId: projectId)
         controller.present(addTimeViewController, animated: true, completion: nil)
     }
     /**

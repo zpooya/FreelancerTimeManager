@@ -85,7 +85,7 @@ extension AddTimeViewController: UINavigationBarDelegate {
 }
 // MARK: - Public Functions  -
 extension AddTimeViewController {
-    func setContent(timeViewModel: TimeViewModel?) {
+    func setContent(timeViewModel: TimeViewModel?, projectId: Int) {
         self.timeViewModel = timeViewModel
     }
 }
