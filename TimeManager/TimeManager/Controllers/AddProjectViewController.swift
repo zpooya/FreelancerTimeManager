@@ -82,7 +82,7 @@ extension AddProjectViewController: UINavigationBarDelegate {
 // MARK: - helper functions -
 extension AddProjectViewController {
     private func setPresenter() {
-        self.presenter = AddProjectPresenter(delegate: self)
+        self.presenter = AddProjectPresenter(delegate: self, dataManager: DataManager())
     }
     private func setupView() {
         self.projectTitleTextField.text = self.projectTitle

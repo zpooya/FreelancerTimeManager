@@ -70,7 +70,7 @@ extension ProjectsViewController {
 // MARK: - setPresenter  -
 extension ProjectsViewController {
     private func setPresenter() {
-        self.presenter = ProjectsPresenter(delegate: self)
+        self.presenter = ProjectsPresenter(delegate: self, dataManager: DataManager())
     }
 }
 // MARK: - SetupView -

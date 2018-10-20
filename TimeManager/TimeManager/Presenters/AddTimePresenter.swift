@@ -51,8 +51,9 @@ class AddTimePresenter {
     // MARK: - private variables  -
     private weak var delegate: AddTimePresenterDelegate?
     private var dataManager = DataManager()
-    init(delegate: AddTimePresenterDelegate) {
+    init(delegate: AddTimePresenterDelegate, dataManager: DataManager) {
         self.delegate = delegate
+        self.dataManager = dataManager
     }
 }
 

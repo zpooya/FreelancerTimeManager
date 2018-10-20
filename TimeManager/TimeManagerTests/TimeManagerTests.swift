@@ -9,26 +9,31 @@
 import XCTest
 @testable import TimeManager
 
+/// ProjectsPresenterTested
 class TimeManagerTests: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    let handleEmptyProjectsMock = DataManagerMock(projectsModel: [])
+    let setProjectsMock = DataManagerMock(projectsModel: [ProjectModel(id: 1, title: "something", desc: nil, times: nil, customerName: "some name", customerMobile: nil, customerEmail: nil)])
+    
+    func testEmptyProject() {
+        let projectsViewControllerMock = ProjectsViewControllerMock()
+        let projectsPresenterUnderTest = ProjectsPresenter(delegate: projectsViewControllerMock, dataManager: handleEmptyProjectsMock)
+        projectsPresenterUnderTest.getProjects()
+        XCTAssertTrue(projectsViewControllerMock.handleEmptyProjectsCalled)
     }
+    func testHandleEmptyProjects() {
+        let projectsViewControllerMock = ProjectsViewControllerMock()
+        let projectsPresenterUnderTest = ProjectsPresenter(delegate: projectsViewControllerMock, dataManager: setProjectsMock)
+        
+        projectsPresenterUnderTest.getProjects()
+        XCTAssertTrue(projectsViewControllerMock.setProjectsCalled)
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        
     }
+    func testDeletingProject() {
+        let projectsViewControllerMock = ProjectsViewControllerMock()
+        let projectsPresenterUnderTest = ProjectsPresenter(delegate: projectsViewControllerMock, dataManager: handleEmptyProjectsMock)
+        projectsPresenterUnderTest.deleteProject(projectId: 0)
+        XCTAssertTrue(projectsViewControllerMock.projectDeletedCalled)
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

@@ -76,7 +76,7 @@ class ProjectDetailViewController: UIViewController {
 // MARK: - setPresenter  -
 extension ProjectDetailViewController {
     private func setPresenter() {
-        self.presenter = ProjectDetailPresenter(delegate: self)
+        self.presenter = ProjectDetailPresenter(delegate: self, dataManager: DataManager())
     }
 }
 // MARK: - helper functions  -

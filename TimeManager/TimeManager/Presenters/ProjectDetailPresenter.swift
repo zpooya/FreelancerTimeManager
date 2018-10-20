@@ -56,8 +56,9 @@ class ProjectDetailPresenter {
     private var dataManager = DataManager()
     
     // MARK: - init  -
-    init(delegate: ProjectDetailPresenterDelegate) {
+    init(delegate: ProjectDetailPresenterDelegate, dataManager: DataManager) {
         self.delegate = delegate
+        self.dataManager = dataManager
     }
 }
 // MARK: - ProjectDetailPresenterProtocol  -

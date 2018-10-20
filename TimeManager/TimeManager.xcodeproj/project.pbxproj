@@ -20,6 +20,7 @@
 		039A47552178D4D200233F36 /* TimeManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039A47542178D4D200233F36 /* TimeManagerTests.swift */; };
 		039A47602178D4D200233F36 /* TimeManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039A475F2178D4D200233F36 /* TimeManagerUITests.swift */; };
 		039EBDD2217B90F8002F7BF6 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039EBDD1217B90F8002F7BF6 /* KeyboardHandler.swift */; };
+		039EBDD5217BBA05002F7BF6 /* MockClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039EBDD4217BBA05002F7BF6 /* MockClasses.swift */; };
 		03DA2AA62179CB5000212A94 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA2AA42179CB5000212A94 /* ProjectTableViewCell.swift */; };
 		03DA2AA72179CB5000212A94 /* ProjectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03DA2AA52179CB5000212A94 /* ProjectTableViewCell.xib */; };
 		03DA2AA92179D8BB00212A94 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA2AA82179D8BB00212A94 /* ProjectModel.swift */; };
@@ -86,6 +87,7 @@
 		039A475F2178D4D200233F36 /* TimeManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManagerUITests.swift; sourceTree = "<group>"; };
 		039A47612178D4D200233F36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		039EBDD1217B90F8002F7BF6 /* KeyboardHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
+		039EBDD4217BBA05002F7BF6 /* MockClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockClasses.swift; sourceTree = "<group>"; };
 		03DA2AA42179CB5000212A94 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
 		03DA2AA52179CB5000212A94 /* ProjectTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectTableViewCell.xib; sourceTree = "<group>"; };
 		03DA2AA82179D8BB00212A94 /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 				035FA6572178DCBE005B1BEB /* Controllers */,
 				035FA6582178DCD6005B1BEB /* View */,
 				035FA6592178DCDE005B1BEB /* Resources */,
+				039EBDD3217BB9BA002F7BF6 /* MockClasses */,
 				039A47432178D4D100233F36 /* TimeManager.xcdatamodeld */,
 			);
 			path = TimeManager;
@@ -300,6 +303,14 @@
 				039A47612178D4D200233F36 /* Info.plist */,
 			);
 			path = TimeManagerUITests;
+			sourceTree = "<group>";
+		};
+		039EBDD3217BB9BA002F7BF6 /* MockClasses */ = {
+			isa = PBXGroup;
+			children = (
+				039EBDD4217BBA05002F7BF6 /* MockClasses.swift */,
+			);
+			path = MockClasses;
 			sourceTree = "<group>";
 		};
 		03DA2AA22179CB1500212A94 /* CustomCells */ = {
@@ -722,6 +733,7 @@
 				039A47452178D4D100233F36 /* TimeManager.xcdatamodeld in Sources */,
 				03DA2AC0217A7EEC00212A94 /* ProjectsPresenter.swift in Sources */,
 				03DA2AA62179CB5000212A94 /* ProjectTableViewCell.swift in Sources */,
+				039EBDD5217BBA05002F7BF6 /* MockClasses.swift in Sources */,
 				03DA2AD5217AC98A00212A94 /* ProjectInfoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -940,6 +952,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RU8NX52YL8;
 				INFOPLIST_FILE = TimeManagerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -961,6 +974,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RU8NX52YL8;
 				INFOPLIST_FILE = TimeManagerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -981,6 +995,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RU8NX52YL8;
 				INFOPLIST_FILE = TimeManagerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1001,6 +1016,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RU8NX52YL8;
 				INFOPLIST_FILE = TimeManagerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -62,7 +62,7 @@ extension AddTimeViewController
 // MARK: - helper functions -
 extension AddTimeViewController {
     private func setPresenter() {
-        self.presenter = AddTimePresenter(delegate: self)
+        self.presenter = AddTimePresenter(delegate: self, dataManager: DataManager())
     }
     private func addTargetToPickers() {
         datePicker.addTarget(self, action: #selector(dateChanged(sender:)), for: .valueChanged)
