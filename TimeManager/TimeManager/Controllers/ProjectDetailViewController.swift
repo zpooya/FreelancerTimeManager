@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class ProjectDetailViewController: UIViewController {
     
@@ -22,6 +23,7 @@ class ProjectDetailViewController: UIViewController {
     let timeSectionHeaderTableViewCellIdentifier = "TimeSectionHeaderTableViewCell"
     let pageTitle = "Project Detail"
     let action1Title = "Ok"
+    let emailSubject = "Invoice"
     // MARK: - IBOutlet  -
     @IBOutlet weak var projectDetailTableView: UITableView! {
         didSet {
@@ -39,13 +41,20 @@ class ProjectDetailViewController: UIViewController {
             
         }
     }
-    // MARK: - varibales  -
+    // MARK: - computer variables  -
     private var projectViewModel: ProjectViewModel? {
         didSet {
             self.projectDetailTableView?.reloadData()
         }
     }
     private var presenter: ProjectDetailPresenter?
+    private var emailMessage: String {
+        var message = "<p>This email is to notify you that your invoice for porject "
+        message += "<b>" + (self.projectViewModel?.title ?? "" ) + "</b>"
+        message += " is as follow:</p><p>\n\n Total Time Spent: \n\n"
+        message += (self.projectViewModel?.totalTimeSpent ?? "0") + "</p>"
+        return message
+    }
 
     // MARK: - override  -
     override func viewDidLoad() {
@@ -117,6 +126,7 @@ extension ProjectDetailViewController: UITableViewDataSource {
             default:
                 let cell = tableView.dequeueReusableCell(withIdentifier: self.customerInfoTableViewCelldentifier, for: indexPath) as! CustomerInfoTableViewCell
                 cell.setContent(projectViewModel: self.projectViewModel)
+                cell.delegate = self
                 return cell
             }
             
@@ -153,13 +163,15 @@ extension ProjectDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 1:
-            guard let projectId = self.projectViewModel?.id else {
-                return
-            }
-            self.presenter?.goToAddTime(controller: self, timeViewModel: self.projectViewModel?.timesForTimeDetail[indexPath.row], projectId: projectId)
+            self.presenter?.goToAddTime(controller: self, projectDetailTimeViewModel: self.projectViewModel?.timesForProjectDetail[indexPath.row], projectViewModel: self.projectViewModel)
         default:
             break
         }
+    }
+}
+extension ProjectDetailViewController: CustomerInfoTableViewCellDelegate {
+    func sendEmail() {
+        self.sendEmailToCustomer()
     }
 }
 // MARK: - TimeTableViewCellDelegate  -
@@ -175,14 +187,34 @@ extension ProjectDetailViewController: TimeTableViewCellDelegate {
 // MARK: - TimeSectionHeaderTableViewCellDelegate  -
 extension ProjectDetailViewController: TimeSectionHeaderTableViewCellDelegate {
     func goToAddTime() {
-        guard let projectId = self.projectViewModel?.id else {
-            return
-        }
-        self.presenter?.goToAddTime(controller: self, timeViewModel: nil, projectId: projectId)
+        self.presenter?.goToAddTime(controller: self, projectDetailTimeViewModel: nil, projectViewModel: self.projectViewModel)
     }
     
 }
-// MARK: -   -
+extension ProjectDetailViewController {
+    func sendEmailToCustomer() {
+    
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients([self.projectViewModel?.customerEmail ?? ""])
+            mail.setSubject(self.emailSubject)
+            mail.setMessageBody(self.emailMessage, isHTML: true)
+            
+            present(mail, animated: true)
+        } else {
+            // show failure alert
+        }
+    }
+ 
+}
+extension ProjectDetailViewController: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+
+    }
+}
+// MARK: - ProjectDetailPresenterDelegate  -
 extension ProjectDetailViewController: ProjectDetailPresenterDelegate {
     func handleEmptyProjects() {
         self.projectViewModel = nil

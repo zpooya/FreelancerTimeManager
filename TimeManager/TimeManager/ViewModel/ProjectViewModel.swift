@@ -62,6 +62,13 @@ class ProjectViewModel {
             let timeForProjectDetail = ProjectDetailTimeViewModel(time: time)
             times.append(timeForProjectDetail)
         }
+        /// soriting array according to date
+        times = times.sorted(){
+            (obj1, obj2) in
+            let date1 = obj1.dateToShow?.date
+            let date2 = obj2.dateToShow?.date
+            return date1! < date2!
+        }
         return times
     }
     

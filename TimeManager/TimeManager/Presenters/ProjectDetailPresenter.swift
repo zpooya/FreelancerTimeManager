@@ -17,7 +17,7 @@ protocol ProjectDetailPresenterDelegate: class {
 protocol ProjectDetailPresenterProtocol {
     func getProject(projectId: Int)
     func deleteTime(timeId: Int, projectId: Int)
-    func goToAddTime(controller: ProjectDetailViewController, timeViewModel: TimeViewModel?, projectId: Int)
+    func goToAddTime(controller: ProjectDetailViewController, projectDetailTimeViewModel: ProjectDetailTimeViewModel?, projectViewModel: ProjectViewModel?)
     func gotoAddProject(controller: ProjectDetailViewController, projectViewModel: ProjectViewModel?)
 
 }
@@ -60,8 +60,16 @@ extension ProjectDetailPresenter: ProjectDetailPresenterProtocol {
         }
     }
     
-    func goToAddTime(controller: ProjectDetailViewController, timeViewModel: TimeViewModel?, projectId: Int) {
-        let addTimeViewController = ProjectConfigurator.createAddTimeViewController(withData: timeViewModel, projectId: projectId)
+    func goToAddTime(controller: ProjectDetailViewController, projectDetailTimeViewModel: ProjectDetailTimeViewModel?, projectViewModel: ProjectViewModel?) {
+        var selectedTimeViewModel: TimeViewModel?
+            
+        for time in projectViewModel?.timesForTimeDetail ?? [] where time.id == projectDetailTimeViewModel?.id {
+            selectedTimeViewModel = time
+        }
+        guard let projectId = projectViewModel?.id else {
+            return
+        }
+        let addTimeViewController = ProjectConfigurator.createAddTimeViewController(withData: selectedTimeViewModel, projectId: projectId)
         controller.present(addTimeViewController, animated: true, completion: nil)
     }
     

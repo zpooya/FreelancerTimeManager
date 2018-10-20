@@ -12,7 +12,7 @@ class ProjectsViewController: UIViewController {
     
     // MARK: - Constant Variables  -
     let pageTitle = "Projects"
-    let heightForRow: CGFloat = 110
+    let heightForRow: CGFloat = 120
     let numberOfSections: Int = 1
     let projectTableViewCellIdentifier = "ProjectTableViewCell"
     let alerControllerTitle = "No Projects"

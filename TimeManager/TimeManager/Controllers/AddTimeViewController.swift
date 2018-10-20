@@ -29,6 +29,7 @@ class AddTimeViewController: UIViewController {
     private var selectedDate = Date()
     private var selectedTime = Date()
     private var projectId: Int?
+    
     // MARK: - override  -
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,11 @@ class AddTimeViewController: UIViewController {
         self.addTargetToPickers()
         self.setupView()
         self.getPageTitle()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.setupView()
+
     }
   
 }
@@ -62,9 +68,13 @@ extension AddTimeViewController {
 
     }
     private func setupView() {
-        self.datePicker.date = self.timeViewModel?.dateToShow ?? Date()
+        self.datePicker.timeZone = TimeZone(secondsFromGMT: 0)
+        self.selectedDate = self.timeViewModel?.dateToShow ?? Date()
+        self.datePicker.date = self.selectedDate
         let defaultTime = Date().setTime(hour: 0, min: 0) ?? Date()
-        self.timePicker.date = self.timeViewModel?.timeToShow ?? defaultTime
+        self.timePicker.timeZone = TimeZone(secondsFromGMT: 0)
+        self.selectedTime = self.timeViewModel?.timeToShow ?? defaultTime
+        self.timePicker.setDate(self.selectedTime, animated: true)
     }
     
     private func getPageTitle() {

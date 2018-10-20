@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+protocol CustomerInfoTableViewCellDelegate: class {
+    func sendEmail()
+}
 class CustomerInfoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var customerNameLabel: UILabel!
@@ -15,6 +17,7 @@ class CustomerInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var customerEmailButton: UIButton!
     
     private var projectViewModel: ProjectViewModel?
+    weak var delegate: CustomerInfoTableViewCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -26,9 +29,15 @@ class CustomerInfoTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func call(_ sender: UIButton) {
+        if let number = self.projectViewModel?.customerMobile,
+            let url = URL(string: "tel://\(number)"),
+            UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
     }
     
     @IBAction func email(_ sender: UIButton) {
+        self.delegate?.sendEmail()
     }
     
     public func setContent(projectViewModel: ProjectViewModel?) {

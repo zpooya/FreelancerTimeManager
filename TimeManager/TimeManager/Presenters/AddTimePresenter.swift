@@ -81,7 +81,9 @@ extension AddTimePresenter {
 // MARK: - helper  -
 extension AddTimePresenter {
     private func createTimeModel(date: Date, time: Date, id: Int?) -> TimeModel {
-        let components = Calendar.current.dateComponents([.hour, .minute], from: time)
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(secondsFromGMT: 0)!
+        let components = calendar.dateComponents([.hour, .minute], from: time)
         let hour = components.hour ?? 0
         let minute = components.minute ?? 0
         let timeModel = TimeModel(id: id, date: date.string, hourSpent: hour, minuteSpent: minute)

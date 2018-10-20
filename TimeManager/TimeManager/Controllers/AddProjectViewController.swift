@@ -8,18 +8,18 @@
 
 import UIKit
 
-class AddProjectViewController: UIViewController {
+class AddProjectViewController: KeyboardHandler {
     // MARK: - constant variables  -
     let mandatoryErrorMessage = "Required"
     let action1Title = "Ok"
-
+    
     // MARK: - IBOutlet  -
     @IBOutlet weak var customNavigationBar: UINavigationBar! {
         didSet {
             self.customNavigationBar.delegate = self
         }
     }
-    
+    @IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet weak var projectTitleTextField: CustomSkyFloatingLabelTextField!
     @IBOutlet weak var projectDescTextField: CustomSkyFloatingLabelTextField!
@@ -89,6 +89,7 @@ extension AddProjectViewController {
         self.customerNameTextField.text = self.customerName
         self.customerMobileTextField.text = self.customerMobile
         self.customerEmailTextField.text = self.customerEmail
+        self.addKeyboardNotification(withConstraint: keyboardHeightLayoutConstraint)
         self.addGesturetoRemoveKeybard()
     }
     private func getPageTitle() {
@@ -166,15 +167,5 @@ extension AddProjectViewController: UITextFieldDelegate {
         if let textFiledCustom = textField as? CustomSkyFloatingLabelTextField {
             textFiledCustom.errorMessage = ""
         }
-    }
-}
-// MARK: - view helpers  -
-extension AddProjectViewController {
-    private func addGesturetoRemoveKeybard() {
-        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        self.view.addGestureRecognizer(tapGesture)
-    }
-    @objc private func dismissKeyboard() {
-        self.view.endEditing(true)
     }
 }

@@ -19,6 +19,7 @@
 		039A474A2178D4D200233F36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 039A47482178D4D200233F36 /* LaunchScreen.storyboard */; };
 		039A47552178D4D200233F36 /* TimeManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039A47542178D4D200233F36 /* TimeManagerTests.swift */; };
 		039A47602178D4D200233F36 /* TimeManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039A475F2178D4D200233F36 /* TimeManagerUITests.swift */; };
+		039EBDD2217B90F8002F7BF6 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039EBDD1217B90F8002F7BF6 /* KeyboardHandler.swift */; };
 		03DA2AA62179CB5000212A94 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA2AA42179CB5000212A94 /* ProjectTableViewCell.swift */; };
 		03DA2AA72179CB5000212A94 /* ProjectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03DA2AA52179CB5000212A94 /* ProjectTableViewCell.xib */; };
 		03DA2AA92179D8BB00212A94 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA2AA82179D8BB00212A94 /* ProjectModel.swift */; };
@@ -84,6 +85,7 @@
 		039A475B2178D4D200233F36 /* TimeManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		039A475F2178D4D200233F36 /* TimeManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManagerUITests.swift; sourceTree = "<group>"; };
 		039A47612178D4D200233F36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		039EBDD1217B90F8002F7BF6 /* KeyboardHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
 		03DA2AA42179CB5000212A94 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
 		03DA2AA52179CB5000212A94 /* ProjectTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectTableViewCell.xib; sourceTree = "<group>"; };
 		03DA2AA82179D8BB00212A94 /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 			children = (
 				035FA6652178E293005B1BEB /* CustomSkyFloatingLabelTextField.swift */,
 				03F1563C217B5974005E159B /* Constants.swift */,
+				039EBDD1217B90F8002F7BF6 /* KeyboardHandler.swift */,
 			);
 			path = CustomClasses;
 			sourceTree = "<group>";
@@ -696,6 +699,7 @@
 				03DA2AB62179F51C00212A94 /* DateExtension.swift in Sources */,
 				035FA6632178DE8C005B1BEB /* AddProjectViewController.swift in Sources */,
 				035FA6612178DE76005B1BEB /* AddTimeViewController.swift in Sources */,
+				039EBDD2217B90F8002F7BF6 /* KeyboardHandler.swift in Sources */,
 				03DA2AC2217A866600212A94 /* ProjectConfigurator.swift in Sources */,
 				03DA2AB82179F66400212A94 /* StringExtension.swift in Sources */,
 				03DA2AB32179E63D00212A94 /* TimeViewModel.swift in Sources */,

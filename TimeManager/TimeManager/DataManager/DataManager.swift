@@ -200,10 +200,12 @@ class DataManager: DataManagerProtocol {
         guard let managedContext = self.managedContext else {
             return false
         }
-        
+        guard let timeId = timeModel.id else {
+            return false
+        }
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: CoreDataEntityNames.TimeKeys.timeEntityName)
         fetchRequest.fetchLimit = 1
-        fetchRequest.predicate = NSPredicate(format: "id == %lld", Int64(projectId))
+        fetchRequest.predicate = NSPredicate(format: "id == %lld", Int64(timeId))
         do {
             let times = try managedContext.fetch(fetchRequest)
             let time: Time = times.first as! Time

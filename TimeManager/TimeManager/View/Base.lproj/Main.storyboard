@@ -446,6 +446,7 @@
                         <outlet property="customerEmailTextField" destination="JgP-CJ-1JG" id="4Wt-hY-xHn"/>
                         <outlet property="customerMobileTextField" destination="z8r-hW-SsJ" id="HrN-gZ-EdM"/>
                         <outlet property="customerNameTextField" destination="z2j-ty-p4x" id="bVD-EA-Zsh"/>
+                        <outlet property="keyboardHeightLayoutConstraint" destination="vsK-Ol-kJd" id="vC1-O5-LLK"/>
                         <outlet property="navItem" destination="G0G-pM-h6q" id="7LC-5J-M2k"/>
                         <outlet property="projectDescTextField" destination="DPc-Sh-dL6" id="Aoi-Ok-Eyg"/>
                         <outlet property="projectTitleTextField" destination="HoQ-H7-0KU" id="rba-4I-6jA"/>
