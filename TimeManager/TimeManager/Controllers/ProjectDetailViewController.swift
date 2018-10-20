@@ -13,7 +13,7 @@ class ProjectDetailViewController: UIViewController {
     // MARK: - Constant Variables  -
     let estimatedRowHeight: CGFloat = 50
     let section0HeaderHeight: CGFloat = 0
-    let section1HeaderHeight: CGFloat = 80
+    let section1HeaderHeight: CGFloat = 70
     let numberOfSections: Int = 2
     let numberOfSection0Rows: Int = 2
     let projectInfoTableViewCelldentifier = "ProjectInfoTableViewCell"
@@ -149,6 +149,17 @@ extension ProjectDetailViewController: UITableViewDelegate {
         headerView.setContent(projectViewModel: self.projectViewModel)
         headerView.delegate = self
         return headerView
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 1:
+            guard let projectId = self.projectViewModel?.id else {
+                return
+            }
+            self.presenter?.goToAddTime(controller: self, timeViewModel: self.projectViewModel?.timesForTimeDetail[indexPath.row], projectId: projectId)
+        default:
+            break
+        }
     }
 }
 // MARK: - TimeTableViewCellDelegate  -

@@ -34,7 +34,7 @@ class CustomerInfoTableViewCell: UITableViewCell {
     public func setContent(projectViewModel: ProjectViewModel?) {
         self.projectViewModel = projectViewModel
         self.customerNameLabel.text = projectViewModel?.customerName ?? ""
-        self.customerMobileButton.setTitle(projectViewModel?.customerMobile ?? "", for: .normal)
-        self.customerEmailButton.setTitle(projectViewModel?.customerEmail ?? "", for: .normal)
+        self.customerMobileButton.setTitle(projectViewModel?.customerMobile ?? "Not Set", for: .normal)
+        self.customerEmailButton.setTitle(projectViewModel?.customerEmail ?? "Not Set", for: .normal)
     }
 }

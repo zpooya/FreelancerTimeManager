@@ -25,11 +25,21 @@ protocol DataManagerProtocol: class {
 }
 
 class DataManager: DataManagerProtocol {
+    // MARK: - Error Messages  -
+    let errorGetProjects = "Could not fetch Projects. "
+    let errorAddProject = "Could not save Project. "
+    let errorGetProject = "Could not fetch Project. "
+    let errorEditProject = "Editing Project Failed. "
+    let errorDeleteProject = "Could not delete Project. "
+    let errorAddTimeToProject = "Could not add Time to Project."
+    let errorEditTime = "Could not Edit Time. "
+    let errorGetTime = "Could not fetch Time. "
+    let errorDeleteTime = "Could not delete Time. "
     
+    // MARK: - Computed Variables  -
     var appDelegate: AppDelegate? {
         return UIApplication.shared.delegate as? AppDelegate
     }
-    
     var managedContext: NSManagedObjectContext? {
         return appDelegate?.persistentContainer.viewContext
         
@@ -59,7 +69,7 @@ class DataManager: DataManagerProtocol {
             }
             return projectModels
         } catch let error as NSError {
-            print("Could not fetch Projects. \(error)")
+            debugPrint(errorGetProjects + "\(error)")
             return nil
         }
     }
@@ -80,24 +90,11 @@ class DataManager: DataManagerProtocol {
         let uniqueId = self.nextAvailble(CoreDataEntityNames.ProjectKeys.id, forEntityName: CoreDataEntityNames.ProjectKeys.projectEntityName, inContext: managedContext)
         projectObject.id = Int64(uniqueId)
         
-
-//        guard let projectEntity = NSEntityDescription.entity(forEntityName: CoreDataEntityNames.ProjectKeys.projectEntityName, in: managedContext) else {
-//            return
-//        }
-//        let projectObject = NSManagedObject(entity: projectEntity, insertInto: managedContext)
-//         let uniqueId = self.nextAvailble(CoreDataEntityNames.ProjectKeys.id, forEntityName: CoreDataEntityNames.ProjectKeys.projectEntityName, inContext: managedContext)
-//        projectObject.setValue(Int64(uniqueId), forKeyPath: CoreDataEntityNames.ProjectKeys.id)
-//        projectObject.setValue(project.title, forKeyPath: CoreDataEntityNames.ProjectKeys.title)
-//        projectObject.setValue(project.desc, forKey: CoreDataEntityNames.ProjectKeys.desc)
-//        projectObject.setValue(project.customerName, forKey: CoreDataEntityNames.ProjectKeys.customerName)
-//        projectObject.setValue(project.customerMobile, forKey: CoreDataEntityNames.ProjectKeys.customerMobile)
-//        projectObject.setValue(project.customerEmail, forKey: CoreDataEntityNames.ProjectKeys.customerEmail)
-        
         do {
             try managedContext.save()
             return true
         } catch let error as NSError {
-            print("Could not save Project. \(error)")
+            debugPrint(errorAddProject + "\(error)")
             return false
         }
     }
@@ -126,14 +123,8 @@ class DataManager: DataManagerProtocol {
             projectObject.customerName = project.customerName
             projectObject.customerMobile = project.customerMobile
             projectObject.customerEmail = project.customerEmail
-//            project.setValue(project.title, forKeyPath: CoreDataEntityNames.ProjectKeys.title)
-//            project.setValue(project.desc, forKey: CoreDataEntityNames.ProjectKeys.desc)
-//            project.setValue(project.customerName, forKey: CoreDataEntityNames.ProjectKeys.customerName)
-//            project.setValue(project.customerMobile, forKey: CoreDataEntityNames.ProjectKeys.customerMobile)
-//            project.setValue(project.customerEmail, forKey: CoreDataEntityNames.ProjectKeys.customerEmail)
-//
         } catch let error as NSError {
-            print("Could not edit Project. \(error)")
+            debugPrint(errorEditProject + "\(error)")
             return false
         }
         
@@ -142,7 +133,7 @@ class DataManager: DataManagerProtocol {
             return true
         }
         catch let error as NSError {
-            print("Editing Project Failed: \(error)")
+            debugPrint(errorEditProject + "\(error)")
             return false
         }
     }
@@ -159,10 +150,8 @@ class DataManager: DataManagerProtocol {
             let projects = try managedContext.fetch(fetchRequest)
             let project: Project = projects.first as! Project
             managedContext.delete(project)
-            //return true
-
         } catch let error as NSError {
-            print("Could not delete Project. \(error)")
+            debugPrint(errorDeleteProject + "\(error)")
             return false
         }
         do {
@@ -170,7 +159,7 @@ class DataManager: DataManagerProtocol {
             return true
         }
         catch let error as NSError {
-            print("Editing Time Failed: \(error)")
+            debugPrint(errorDeleteProject + "\(error)")
             return false
         }
     }
@@ -193,9 +182,8 @@ class DataManager: DataManagerProtocol {
             let uniqueId = self.nextAvailble(CoreDataEntityNames.TimeKeys.id, forEntityName: CoreDataEntityNames.TimeKeys.timeEntityName, inContext: managedContext)
             time.id = Int64(uniqueId)
             project.addToTimes(time)
-           // return true
         } catch let error as NSError {
-            print("Could not add Time to Project. \(error)")
+            debugPrint(errorAddTimeToProject + "\(error)")
             return false
         }
         do {
@@ -203,7 +191,7 @@ class DataManager: DataManagerProtocol {
             return true
         }
         catch let error as NSError {
-            print("Editing Time Failed: \(error)")
+            debugPrint(errorAddTimeToProject + "\(error)")
             return false
         }
     }
@@ -224,14 +212,14 @@ class DataManager: DataManagerProtocol {
             time.date = timeModel.date
     
         } catch let error as NSError {
-            print("Could not fetch Project. \(error)")
+            debugPrint(errorEditTime + "\(error)")
         }
         do {
             try managedContext.save()
             return true
         }
         catch let error as NSError {
-            print("Editing Time Failed: \(error)")
+            debugPrint(errorEditTime + "\(error)")
             return false
         }
     }
@@ -258,10 +246,8 @@ class DataManager: DataManagerProtocol {
             let times = try managedContext.fetch(fetchRequest)
             let time: Time = times.first as! Time
             managedContext.delete(time)
-          //  return true
-            
         } catch let error as NSError {
-            print("Could not delete Time. \(error)")
+            debugPrint(errorDeleteTime + "\(error)")
             return false
         }
         do {
@@ -269,7 +255,7 @@ class DataManager: DataManagerProtocol {
             return true
         }
         catch let error as NSError {
-            print("Editing Time Failed: \(error)")
+            debugPrint(errorDeleteTime + "\(error)")
             return false
         }
     }
@@ -297,7 +283,7 @@ extension DataManager {
             
             return projectModel
         } catch let error as NSError {
-            print("Could not fetch Project. \(error)")
+            print(errorGetProject + "\(error)")
             return nil
         }
     }
@@ -320,26 +306,5 @@ extension DataManager {
         }
         
         return 1
-    }
-}
-
-class CoreDataEntityNames {
-    struct ProjectKeys {
-        static let projectEntityName = "Project"
-        static let id = "id"
-        static let title = "title"
-        static let desc = "desc"
-        static let customerName = "customerName"
-        static let customerMobile = "customerMobile"
-        static let customerEmail = "customerEmail"
-        
-        
-    }
-    struct TimeKeys {
-        static let timeEntityName = "Time"
-        static let id = "id"
-        static let date = "date"
-        static let hourSpent = "hourSpent"
-        static let minuteSpent = "minuteSpent"
     }
 }
