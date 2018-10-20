@@ -52,7 +52,7 @@ class AddProjectViewController: UIViewController {
 // MARK: - IBAction-
 extension AddProjectViewController {
     @IBAction func done(_ sender: UIBarButtonItem) {
-        
+        self.validation()
     }
     @IBAction func close(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
@@ -95,6 +95,11 @@ extension AddProjectViewController {
         self.presenter?.getPageTitle(projectId: self.projectId)
     }
     private func validation() {
+        self.projectTitle = self.projectTitleTextField.text ?? ""
+        self.projectDesc = self.projectDescTextField.text ?? ""
+        self.customerName = self.customerNameTextField.text ?? ""
+        self.customerMobile = self.customerMobileTextField.text ?? ""
+        self.customerEmail = self.customerEmailTextField.text ?? ""
         if projectTitle.count > 0, customerName.count > 0 {
             self.createOrUpdateProject()
             return

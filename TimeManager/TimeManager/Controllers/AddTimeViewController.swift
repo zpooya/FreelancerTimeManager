@@ -123,6 +123,7 @@ extension AddTimeViewController: UINavigationBarDelegate {
 extension AddTimeViewController {
     func setContent(timeViewModel: TimeViewModel?, projectId: Int) {
         self.timeViewModel = timeViewModel
+        self.projectId = projectId
     }
 }
 // MARK: - AddTimePresenterDelegate  -

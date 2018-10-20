@@ -22,10 +22,40 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hfz-dn-12G">
+                                <rect key="frame" x="32" y="268" width="311" height="131"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are no projects, you can add one" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M28-Q1-snO">
+                                        <rect key="frame" x="8" y="20" width="295" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DyM-QH-miP">
+                                        <rect key="frame" x="115.5" y="81" width="80" height="30"/>
+                                        <state key="normal" title="Add Project"/>
+                                        <connections>
+                                            <action selector="addProjectHandleErrorView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zWl-8S-WkX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="DyM-QH-miP" secondAttribute="bottom" constant="20" id="2Q4-g9-zeo"/>
+                                    <constraint firstItem="DyM-QH-miP" firstAttribute="centerX" secondItem="Hfz-dn-12G" secondAttribute="centerX" id="UJP-gw-ozQ"/>
+                                    <constraint firstItem="DyM-QH-miP" firstAttribute="top" secondItem="M28-Q1-snO" secondAttribute="bottom" constant="20" id="nY7-Zu-hdK"/>
+                                    <constraint firstItem="M28-Q1-snO" firstAttribute="top" secondItem="Hfz-dn-12G" secondAttribute="top" constant="20" id="psx-A9-c1o"/>
+                                    <constraint firstItem="M28-Q1-snO" firstAttribute="leading" secondItem="Hfz-dn-12G" secondAttribute="leading" constant="8" id="qKQ-ZL-1wr"/>
+                                    <constraint firstAttribute="trailing" secondItem="M28-Q1-snO" secondAttribute="trailing" constant="8" id="szj-g5-An5"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Hfz-dn-12G" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Bn4-D2-NaR"/>
                             <constraint firstItem="JrM-2n-Cvy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Dj2-aX-g4K"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hfz-dn-12G" secondAttribute="trailing" constant="32" id="FuU-CI-JHn"/>
+                            <constraint firstItem="Hfz-dn-12G" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="c8I-tA-Itc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JrM-2n-Cvy" secondAttribute="bottom" id="dV8-MJ-ezY"/>
                             <constraint firstItem="JrM-2n-Cvy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uyf-mA-k8Z"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JrM-2n-Cvy" secondAttribute="trailing" id="xGa-i5-Vs4"/>
@@ -41,13 +71,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="handleErrorView" destination="Hfz-dn-12G" id="o6o-Vf-T0X"/>
                         <outlet property="projectsTableView" destination="JrM-2n-Cvy" id="oPY-gb-Ye8"/>
                         <segue destination="J5I-ca-5Kh" kind="show" identifier="fromProjectsToProject" id="fQ3-ul-33C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="764" y="-252"/>
+            <point key="canvasLocation" x="764" y="-252.32383808095955"/>
         </scene>
         <!--Project Detail-->
         <scene sceneID="gQf-Vu-fDD">

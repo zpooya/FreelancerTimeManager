@@ -12,7 +12,7 @@ class ProjectsViewController: UIViewController {
     
     // MARK: - Constant Variables  -
     let pageTitle = "Projects"
-    let heightForRow: CGFloat = 133
+    let heightForRow: CGFloat = 110
     let numberOfSections: Int = 1
     let projectTableViewCellIdentifier = "ProjectTableViewCell"
     let alerControllerTitle = "No Projects"
@@ -21,8 +21,12 @@ class ProjectsViewController: UIViewController {
     let action1Title = "Ok"
     let action2Title = "Cancel"
     // MARK: - IBOutlet  -
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-
+   
+    @IBOutlet weak var handleErrorView: UIView! {
+        didSet {
+            self.handleErrorView.isHidden = true
+        }
+    }
     @IBOutlet weak var projectsTableView: UITableView! {
         didSet {
             self.projectsTableView.register(UINib(nibName: self.projectTableViewCellIdentifier, bundle: nil), forCellReuseIdentifier: self.projectTableViewCellIdentifier)
@@ -45,11 +49,19 @@ class ProjectsViewController: UIViewController {
         self.getProjects()
         // Do any additional setup after loading the view.
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.getProjects()
+    }
+    
 }
 // MARK: - IBAction -
 extension ProjectsViewController {
     @IBAction func goToAddProject(_ sender: UIBarButtonItem) {
-        
+        self.presenter?.gotoAddProject(controller: self, projectViewModel: nil)
+    }
+    @IBAction func addProjectHandleErrorView(_ sender: UIButton) {
+        self.presenter?.gotoAddProject(controller: self, projectViewModel: nil)
     }
 }
 // MARK: - setPresenter  -
@@ -120,21 +132,25 @@ extension ProjectsViewController: ProjectsPresenterDelegate {
         
     }
     
-    func stopLoading() {
-        
+    func handleViewWithProject() {
+        self.handleErrorView.isHidden = true
+        self.projectsTableView.isHidden = false
     }
     
     func handleEmptyProjects() {
-        let alertController = UIAlertController(title: self.alerControllerTitle, message: self.alertControllerMessage, preferredStyle: .alert)
-        let action1 = UIAlertAction(title: self.addActionTitle, style: .default) { (action:UIAlertAction) in
-            self.presenter?.gotoAddProject(controller: self, projectViewModel: nil)
-        }
-        let action2 = UIAlertAction(title: self.action2Title, style: .cancel, handler: nil)
-        alertController.addAction(action1)
-        alertController.addAction(action2)
-        alertController.popoverPresentationController?.sourceView = self.view
-        self.present(alertController, animated: true, completion: nil)
-        
+        self.projectsViewModel.removeAll()
+        self.handleErrorView.isHidden = false
+        self.projectsTableView.isHidden = true
+//        let alertController = UIAlertController(title: self.alerControllerTitle, message: self.alertControllerMessage, preferredStyle: .alert)
+//        let action1 = UIAlertAction(title: self.addActionTitle, style: .default) { (action:UIAlertAction) in
+//            self.presenter?.gotoAddProject(controller: self, projectViewModel: nil)
+//        }
+//        let action2 = UIAlertAction(title: self.action2Title, style: .cancel, handler: nil)
+//        alertController.addAction(action1)
+//        alertController.addAction(action2)
+//        alertController.popoverPresentationController?.sourceView = self.view
+//        self.present(alertController, animated: true, completion: nil)
+//
     }
     
     func setProjects(projectsViewModel: [ProjectViewModel]) {

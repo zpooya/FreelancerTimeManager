@@ -9,8 +9,7 @@
 import Foundation
 
 protocol ProjectsPresenterDelegate: class {
-    func startLoading()
-    func stopLoading()
+    func handleViewWithProject()
     func handleEmptyProjects()
     func setProjects(projectsViewModel: [ProjectViewModel])
     func projectDeletedShowMessage(title: String, message: String)
@@ -44,14 +43,12 @@ extension ProjectsPresenter: ProjectsPresenterProtocol {
      This method is called from view to get the **ProjectsModel** from CoreData and making the **projectsViewModel** to send to view.
      */
     func getProjects() {
-        self.delegate?.startLoading()
         let projectsModel: [ProjectModel] = self.dataManager.getProjects() ?? []
         if projectsModel.count > 0 {
             let projectsViewModel: [ProjectViewModel] = self.makeProjectsViewModel(projectsModel: projectsModel)
+            self.delegate?.handleViewWithProject()
             self.delegate?.setProjects(projectsViewModel: projectsViewModel)
-            self.delegate?.stopLoading()
         } else {
-            self.delegate?.stopLoading()
             self.delegate?.handleEmptyProjects()
         }
        

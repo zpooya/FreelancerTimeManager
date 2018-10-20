@@ -159,10 +159,18 @@ class DataManager: DataManagerProtocol {
             let projects = try managedContext.fetch(fetchRequest)
             let project: Project = projects.first as! Project
             managedContext.delete(project)
-            return true
+            //return true
 
         } catch let error as NSError {
             print("Could not delete Project. \(error)")
+            return false
+        }
+        do {
+            try managedContext.save()
+            return true
+        }
+        catch let error as NSError {
+            print("Editing Time Failed: \(error)")
             return false
         }
     }
@@ -185,9 +193,17 @@ class DataManager: DataManagerProtocol {
             let uniqueId = self.nextAvailble(CoreDataEntityNames.TimeKeys.id, forEntityName: CoreDataEntityNames.TimeKeys.timeEntityName, inContext: managedContext)
             time.id = Int64(uniqueId)
             project.addToTimes(time)
-            return true
+           // return true
         } catch let error as NSError {
             print("Could not add Time to Project. \(error)")
+            return false
+        }
+        do {
+            try managedContext.save()
+            return true
+        }
+        catch let error as NSError {
+            print("Editing Time Failed: \(error)")
             return false
         }
     }
@@ -242,10 +258,18 @@ class DataManager: DataManagerProtocol {
             let times = try managedContext.fetch(fetchRequest)
             let time: Time = times.first as! Time
             managedContext.delete(time)
-            return true
+          //  return true
             
         } catch let error as NSError {
             print("Could not delete Time. \(error)")
+            return false
+        }
+        do {
+            try managedContext.save()
+            return true
+        }
+        catch let error as NSError {
+            print("Editing Time Failed: \(error)")
             return false
         }
     }
