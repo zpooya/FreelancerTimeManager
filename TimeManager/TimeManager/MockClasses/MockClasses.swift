@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/// This is a mock DataManager used to test the projectsPresenter
 class DataManagerMock: DataManager {
     private let projectsModel: [ProjectModel]
     
@@ -23,7 +23,7 @@ class DataManagerMock: DataManager {
         return true
     }
 }
-
+/// This is a mock ProjectsViewController used to test the projectsPresenter
 class ProjectsViewControllerMock: ProjectsPresenterDelegate {
     var setProjectsCalled = false
     var handleEmptyProjectsCalled = false
@@ -34,9 +34,7 @@ class ProjectsViewControllerMock: ProjectsPresenterDelegate {
     }
     func setProjects(projectsViewModel: [ProjectViewModel]) {
         self.setProjectsCalled = true
-//        if projectsViewModel.count > 0 {
-//            oneProjectIdToDelete = projectsViewModel.first?.id
-//        }
+
     }
     func projectDeletedShowMessage(title: String, message: String) {
         projectDeletedCalled = true
