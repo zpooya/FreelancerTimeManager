@@ -7,7 +7,13 @@
 //
 
 import Foundation
-
+/**
+ Model recieved from and is used to save Data to **CoreData**.
+ 
+ ## Important Notes ##
+ 1. Has an array of **times** which is of kinde **TimeModel**.
+ 2. **ProjectModel** is used to make the **ProjectViewModel**.
+ */
 class ProjectModel {
     var id: Int?
     var title: String?

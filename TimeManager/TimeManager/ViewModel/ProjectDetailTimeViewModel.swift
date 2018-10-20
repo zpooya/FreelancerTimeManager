@@ -7,7 +7,9 @@
 //
 
 import Foundation
-
+/**
+ **ProjectDetailTimeViewModel** is the ViewModel which is used in **ProjectDetailViewController**.
+ */
 class ProjectDetailTimeViewModel {
     var time: TimeModel
     var id: Int? {

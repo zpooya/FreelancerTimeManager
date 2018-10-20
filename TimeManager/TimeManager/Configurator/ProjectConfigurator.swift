@@ -7,7 +7,14 @@
 //
 
 import UIKit
+/**
+This class is responsible for all the navigation of the application.
+ ## It has the Following functions ##
+ 1. **createProjectDetailViewController**
+ 2. **createAddProjectViewController**
+ 3. **createAddTimeViewController**
 
+ */
 class ProjectConfigurator {
     /**
      This method creats the **ProjectDetailViewController** and set its initial data which is of kind **ProjectViewModel**.

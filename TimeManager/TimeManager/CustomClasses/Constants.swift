@@ -7,7 +7,10 @@
 //
 
 import Foundation
-
+/**
+ This class has the constant String values needed for **DataManager**
+    class.
+ */
 class CoreDataEntityNames {
     struct ProjectKeys {
         static let projectEntityName = "Project"

@@ -17,11 +17,13 @@ class ProjectsViewController: UIViewController {
     let projectTableViewCellIdentifier = "ProjectTableViewCell"
     let alerControllerTitle = "No Projects"
     let alertControllerMessage = "There are no projects, add One"
+    let deleteProjectAlertMessage = "Are you sure you want to delete the project?"
     let addActionTitle = "Add Project"
+    let deleteActionTile = "Yes"
     let action1Title = "Ok"
     let action2Title = "Cancel"
     
-    // MARK: - IBOutlet  -
+    // MARK: - IBOutlets  -
        @IBOutlet weak var handleErrorView: UIView! {
         didSet {
             self.handleErrorView.isHidden = true
@@ -34,6 +36,7 @@ class ProjectsViewController: UIViewController {
             self.projectsTableView.dataSource = self
         }
     }
+    
     // MARK: - Variables -
     private var presenter: ProjectsPresenter?
     private var projectsViewModel = [ProjectViewModel]() {
@@ -41,13 +44,13 @@ class ProjectsViewController: UIViewController {
             self.projectsTableView.reloadData()
         }
     }
-    // MARK: - Override -
+    
+    // MARK: - Overrides -
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setTitle()
         self.setPresenter()
         self.getProjects()
-        // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -55,7 +58,7 @@ class ProjectsViewController: UIViewController {
     }
     
 }
-// MARK: - IBAction -
+// MARK: - IBActions -
 extension ProjectsViewController {
     @IBAction func goToAddProject(_ sender: UIBarButtonItem) {
         self.presenter?.gotoAddProject(controller: self, projectViewModel: nil)
@@ -112,22 +115,28 @@ extension ProjectsViewController: ProjectTableViewCellDelegate {
         guard let projectId = projectViewModel?.id else {
             return
         }
-        self.presenter?.deleteProject(projectId: projectId)
+        let alertController = UIAlertController(title: nil, message: self.deleteProjectAlertMessage, preferredStyle: .alert)
+        let action1 = UIAlertAction(title: self.deleteActionTile, style: .default) { (action:UIAlertAction) in
+            self.presenter?.deleteProject(projectId: projectId)
+        }
+        let action2 = UIAlertAction(title: self.action2Title, style: .cancel, handler: nil)
+        alertController.addAction(action1)
+        alertController.addAction(action2)
+        alertController.popoverPresentationController?.sourceView = self.view
+        self.present(alertController, animated: true, completion: nil)
     }
     
     func userDidSelecAddTime(projectViewModel: ProjectViewModel?) {
         guard let projectId = projectViewModel?.id else {
             return
         }
-
         self.presenter?.goToAddTime(controller: self, timeViewModel: nil, projectId: projectId)
     }
 }
-
 // MARK: - ProjectsPresenterDelegate  -
 extension ProjectsViewController: ProjectsPresenterDelegate {
     
-    func handleViewWithProject() {
+    func handleViewWithProjects() {
         self.handleErrorView.isHidden = true
         self.projectsTableView.isHidden = false
     }

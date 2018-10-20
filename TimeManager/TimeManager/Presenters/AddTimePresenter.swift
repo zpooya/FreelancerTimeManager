@@ -7,14 +7,33 @@
 //
 
 import Foundation
-
+/**
+ This protocol is the Delegate of AddTimePresenter.
+ 
+ ## It has the Following functions ##
+ 1. **successfullyCreatedOrUpdated**
+ 2. **failedToCreateOrUpdate**
+ 3. **setPageTitle**
+ */
 protocol AddTimePresenterDelegate: class {
+    /// set the message for successfully created or updated
     func successfullyCreatedOrUpdated(title: String, message: String)
+    /// set the messafe for failing to create or update
     func failedToCreateOrUpdate(title: String, message: String)
+    /// set the page title
     func setPageTitle(title: String)
 }
+/**
+ This protocol represents the public functions of **AddTimePresenter** class.
+ 
+ ## It has the Following functions ##
+ 1. **saveOrUpdateSelectedDateAndTime**
+ 2. **getPageTitle**
+ */
 protocol AddTimePresenterProtocol: class {
+    /// has the duty to create time
     func saveOrUpdateSelectedDateAndTime(timeViewModel: TimeViewModel?, date: Date, time: Date, projectId: Int)
+    /// has the duty to get the page title
     func getPageTitle(timeViewModel: TimeViewModel?)
 
 }
@@ -39,7 +58,9 @@ class AddTimePresenter {
 
 // MARK: - AddTimePresenterProtocol  -
 extension AddTimePresenter: AddTimePresenterProtocol {
-    
+    /**
+     This method is called from view to add the time to CoreData
+     */
     func saveOrUpdateSelectedDateAndTime(timeViewModel: TimeViewModel?, date: Date, time: Date, projectId: Int) {
         let timeModel = self.createTimeModel(date: date, time: time, id: timeViewModel?.id)
         if timeViewModel?.id != nil {
@@ -59,7 +80,11 @@ extension AddTimePresenter: AddTimePresenterProtocol {
             }
         }
     }
-    
+    /**
+     This method is called from view to get the page title .
+     - Parameter timeViewModel: if timeViewModel.id  is not null then the title is update else it is create
+     */
+
     func getPageTitle(timeViewModel: TimeViewModel?) {
         if timeViewModel?.id != nil {
             self.delegate?.setPageTitle(title: self.updateTitle)
@@ -78,8 +103,17 @@ extension AddTimePresenter {
         return self.dataManager.editTime(projectId: projectId, timeModel: timeModel)
     }
 }
-// MARK: - helper  -
+// MARK: - helper functions -
 extension AddTimePresenter {
+    /**
+     This method makes the **TimeModel*** to be give to DataManager.
+     
+     - Parameter date: selected date.
+     - Parameter time: selected time.
+     - Parameter id: timeId if available for updating.
+
+     - returns: TimeModel to be given to DataManager.
+     */
     private func createTimeModel(date: Date, time: Date, id: Int?) -> TimeModel {
         var calendar = Calendar.current
         calendar.timeZone = TimeZone(secondsFromGMT: 0)!

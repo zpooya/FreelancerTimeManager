@@ -7,7 +7,10 @@
 //
 
 import UIKit
-
+/**
+ This class is a helper for keyboard. It is used in **AddProjectViewController**.
+ 
+ */
 class KeyboardHandler: UIViewController {
     var keyboardlayoutConstraint: NSLayoutConstraint!
     

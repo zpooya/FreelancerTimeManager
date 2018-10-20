@@ -7,7 +7,9 @@
 //
 
 import Foundation
-
+/**
+ **TimeModel** is a model which is used to fetch and save data from and to **CoreData**
+ */
 class TimeModel {
     var id: Int?
     var date: String?

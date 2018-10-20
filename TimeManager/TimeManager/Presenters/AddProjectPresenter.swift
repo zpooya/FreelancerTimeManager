@@ -7,14 +7,33 @@
 //
 
 import Foundation
-
+/**
+ This protocol is the Delegate of AddProjectPresenter.
+ 
+ ## It has the Following functions ##
+ 1. **successfullyCreatedOrUpdated**
+ 2. **failedToCreateOrUpdate**
+ 3. **setPageTitle**
+ */
 protocol AddProjectPresenterDelegate: class {
+    /// set the message for successfully created or updated
     func successfullyCreatedOrUpdated(title: String, message: String)
+    /// set the messafe for failing to create or update
     func failedToCreateOrUpdate(title: String, message: String)
+    /// set the page title 
     func setPageTitle(title: String)
 }
+/**
+ This protocol represents the public functions of **AddProjectPresenter** class.
+ 
+ ## It has the Following functions ##
+ 1. **createProject**
+ 2. **getPageTitle**
+ */
 protocol AddProjectPresenterProtocol: class {
+    /// has the duty to create project
    func createProject(projectTitle: String, projectDesc: String, customerName: String, customerMobile: String?, customerEmail: String?, projectId: Int?)
+    /// has the duty to get the page title
     func getPageTitle(projectId: Int?)
 }
 class AddProjectPresenter {
@@ -37,8 +56,12 @@ class AddProjectPresenter {
         self.delegate = delegate
     }
 }
-
+// MARK: - AddProjectPresenterProtocol  -
 extension AddProjectPresenter: AddProjectPresenterProtocol {
+    /**
+     This method is called from view to get the page title .
+     - Parameter projectId: if it is not null then the title is update else it is create 
+     */
     func getPageTitle(projectId: Int?) {
         if projectId != nil {
             self.delegate?.setPageTitle(title: self.updateTitle)
@@ -46,7 +69,9 @@ extension AddProjectPresenter: AddProjectPresenterProtocol {
             self.delegate?.setPageTitle(title: self.createTitle)
         }
     }
-    
+    /**
+     This method is called from view to add the project to CoreData
+     */
     func createProject(projectTitle: String, projectDesc: String, customerName: String, customerMobile: String?, customerEmail: String?, projectId: Int?) {
         
         let projectModel = self.createProjectModel(projectTitle: projectTitle, projectDesc: projectDesc, customerName: customerName, customerMobile: customerMobile, customerEmail: customerEmail, projectId: projectId)
@@ -67,7 +92,7 @@ extension AddProjectPresenter: AddProjectPresenterProtocol {
         }
     }
 }
-// MARK: -  private functions  -
+// MARK: -  connecting to DataManager  -
 extension AddProjectPresenter {
     private func createProject(projectModel: ProjectModel) -> Bool {
         return self.dataManager.addProject(project: projectModel)
@@ -77,8 +102,11 @@ extension AddProjectPresenter {
     }
     
 }
-// MARK: - helper  -
+// MARK: - helper function -
 extension AddProjectPresenter {
+    /**
+     This method makes the **ProjectModel*** to be given to DataManager.
+     */
     private func createProjectModel(projectTitle: String, projectDesc: String, customerName: String, customerMobile: String?, customerEmail: String?, projectId: Int?) -> ProjectModel {
         let projectModel = ProjectModel(id: projectId, title: projectTitle, desc: projectDesc, times: nil, customerName: customerName, customerMobile: customerMobile, customerEmail: customerEmail)
         return projectModel

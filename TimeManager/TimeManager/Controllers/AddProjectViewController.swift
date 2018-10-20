@@ -13,7 +13,7 @@ class AddProjectViewController: KeyboardHandler {
     let mandatoryErrorMessage = "Required"
     let action1Title = "Ok"
     
-    // MARK: - IBOutlet  -
+    // MARK: - IBOutlets  -
     @IBOutlet weak var customNavigationBar: UINavigationBar! {
         didSet {
             self.customNavigationBar.delegate = self
@@ -41,6 +41,7 @@ class AddProjectViewController: KeyboardHandler {
     private var customerMobile = ""
     private var customerEmail = ""
     private var projectId: Int?
+    
     // MARK: - override  -
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +50,7 @@ class AddProjectViewController: KeyboardHandler {
         self.getPageTitle()
     }
 }
-// MARK: - IBAction-
+// MARK: - IBActions -
 extension AddProjectViewController {
     @IBAction func done(_ sender: UIBarButtonItem) {
         self.validation()
@@ -58,7 +59,7 @@ extension AddProjectViewController {
         self.dismiss(animated: true, completion: nil)
     }
 }
-// MARK: - setContent  -
+// MARK: - public setContent  -
 extension AddProjectViewController {
     public func setContent(projectViewModel: ProjectViewModel?) {
         guard let projectId = projectViewModel?.id else {
@@ -116,34 +117,6 @@ extension AddProjectViewController {
         self.presenter?.createProject(projectTitle: self.projectTitle, projectDesc: self.projectDesc, customerName: self.customerName, customerMobile: self.customerMobile, customerEmail: self.customerEmail, projectId: self.projectId)
     }
 }
-// MARK: - AddProjectPresenterDelegate  -
-extension AddProjectViewController: AddProjectPresenterDelegate {
-    func setPageTitle(title: String) {
-        self.navItem.title = title
-    }
-    
-    func successfullyCreatedOrUpdated(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action1 = UIAlertAction(title: self.action1Title, style: .default) { (action:UIAlertAction) in
-            self.dismiss(animated: true, completion: nil)
-        }
-        alertController.addAction(action1)
-        alertController.popoverPresentationController?.sourceView = self.view
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    func failedToCreateOrUpdate(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action1 = UIAlertAction(title: self.action1Title, style: .default) { (action:UIAlertAction) in
-        }
-        alertController.addAction(action1)
-        alertController.popoverPresentationController?.sourceView = self.view
-        self.present(alertController, animated: true, completion: nil)
-        
-    }
-    
-    
-}
 // MARK: - UITextFieldDelegate  -
 extension AddProjectViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -169,3 +142,30 @@ extension AddProjectViewController: UITextFieldDelegate {
         }
     }
 }
+// MARK: - AddProjectPresenterDelegate  -
+extension AddProjectViewController: AddProjectPresenterDelegate {
+    func setPageTitle(title: String) {
+        self.navItem.title = title
+    }
+    
+    func successfullyCreatedOrUpdated(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action1 = UIAlertAction(title: self.action1Title, style: .default) { (action:UIAlertAction) in
+            self.dismiss(animated: true, completion: nil)
+        }
+        alertController.addAction(action1)
+        alertController.popoverPresentationController?.sourceView = self.view
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func failedToCreateOrUpdate(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action1 = UIAlertAction(title: self.action1Title, style: .default) { (action:UIAlertAction) in
+        }
+        alertController.addAction(action1)
+        alertController.popoverPresentationController?.sourceView = self.view
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
+}
+

@@ -8,22 +8,55 @@
 
 import UIKit
 import CoreData
+/**
+ This protocol represents the public functions of **DataManager** class.
+ 
+ ## It has the Following functions ##
+ 1. **getProjects**
+ 2. **addProject**
+ 3. **getProject**
+ 4. **editProject**
+ 5. **deleteProject**
+ 6. **addTimeToProject**
+ 7. **editTime**
+ 8. **getTime**
+ 9. **deleteTime**
+ 
+ ## It has the Following computed variables ##
+ 1. **appDelegate**
+ 2. **managedContext**
 
+ */
 protocol DataManagerProtocol: class {
     var appDelegate: AppDelegate? {get}
     var managedContext: NSManagedObjectContext? {get}
+    /// has the duty to fetch all Projects from the CoreData
     func getProjects() -> [ProjectModel]?
+    /// has the duty to add Project to the CoreData
     func addProject(project: ProjectModel) -> Bool
+    /// has the duty to fetch a project using id from the CoreData
     func getProject(withId id: Int) -> ProjectModel?
+    /// has the duty to edit the exsiting project in the CoreData
     func editProject(project: ProjectModel) -> Bool
+    /// has the duty to delete the project from the CoreData
     func deleteProject(withId id: Int) -> Bool
+    /// has the duty to add time to an existing project in the CoreData
     func addTimeToProject(projectId: Int, timeModel: TimeModel) -> Bool
+    /// has the duty to edit the existing time which is assigned to an existing project in the CoreData
     func editTime(projectId: Int, timeModel: TimeModel) -> Bool
+    /// has the duty to get the time from the CoreData
     func getTime(projectId: Int,timeId: Int) -> TimeModel?
+    /// has the duty to delete the time from the CoreData
     func deleteTime(projectId: Int, timeId: Int) -> Bool
     
 }
-
+/**
+ This class has the duty to fetch and save the data from and to **CoreData**.
+ 
+ ## Important Notes ##
+ 1. All the presenters have an instance of this class.
+ 2. All the **CoreData** business is handled in this class.
+ */
 class DataManager: DataManagerProtocol {
     // MARK: - Error Messages  -
     let errorGetProjects = "Could not fetch Projects. "
@@ -265,7 +298,8 @@ class DataManager: DataManagerProtocol {
 }
 
 extension DataManager {
-    func fetchProject(withId id: Int) -> ProjectModel? {
+    /// helper function which fetch the project with the id from the CoreData
+    private func fetchProject(withId id: Int) -> ProjectModel? {
         guard let managedContext = self.managedContext else {
             return nil
         }
@@ -289,7 +323,8 @@ extension DataManager {
             return nil
         }
     }
-    func nextAvailble(_ idKey: String, forEntityName entityName: String, inContext context: NSManagedObjectContext) -> Int {
+    /// helper function which returns a uiqueId to be assigned to entities in order to have a refrence to them later
+    private func nextAvailble(_ idKey: String, forEntityName entityName: String, inContext context: NSManagedObjectContext) -> Int {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: entityName)
         fetchRequest.propertiesToFetch = [idKey]
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: idKey, ascending: true)]

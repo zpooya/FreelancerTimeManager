@@ -7,7 +7,15 @@
 //
 
 import Foundation
-
+/**
+ **ProjectViewModel** is the ViewModel which is the main ViewModel used across the app.
+ 
+ ## Important Notes ##
+ 1. This class needs a **ProjectModel** for init.
+ 2. Some variables such as **title** just return the title of **ProjectModel**.
+ 3. Some Variables such as **totalTimeSpent** handle some logics.
+ 
+ */
 class ProjectViewModel {
     // MARK: - variables fot ProjectTableView  -
     var project: ProjectModel
@@ -62,7 +70,7 @@ class ProjectViewModel {
             let timeForProjectDetail = ProjectDetailTimeViewModel(time: time)
             times.append(timeForProjectDetail)
         }
-        /// soriting array according to date
+        // soriting array according to date
         times = times.sorted(){
             (obj1, obj2) in
             let date1 = obj1.dateToShow?.date

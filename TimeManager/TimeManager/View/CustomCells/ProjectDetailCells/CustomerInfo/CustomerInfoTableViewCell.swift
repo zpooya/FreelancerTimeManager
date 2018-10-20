@@ -12,12 +12,16 @@ protocol CustomerInfoTableViewCellDelegate: class {
 }
 class CustomerInfoTableViewCell: UITableViewCell {
 
+    // MARK: - IBOutlets  -
     @IBOutlet weak var customerNameLabel: UILabel!
     @IBOutlet weak var customerMobileButton: UIButton!
     @IBOutlet weak var customerEmailButton: UIButton!
     
+    // MARK: - variables  -
     private var projectViewModel: ProjectViewModel?
     weak var delegate: CustomerInfoTableViewCellDelegate?
+    
+    // MARK: - overrides  -
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -28,6 +32,7 @@ class CustomerInfoTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    // MARK: - IBActions  -
     @IBAction func call(_ sender: UIButton) {
         if let number = self.projectViewModel?.customerMobile,
             let url = URL(string: "tel://\(number)"),
@@ -39,7 +44,7 @@ class CustomerInfoTableViewCell: UITableViewCell {
     @IBAction func email(_ sender: UIButton) {
         self.delegate?.sendEmail()
     }
-    
+    // MARK: - Public setContent  -
     public func setContent(projectViewModel: ProjectViewModel?) {
         self.projectViewModel = projectViewModel
         self.customerNameLabel.text = projectViewModel?.customerName ?? ""

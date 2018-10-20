@@ -23,7 +23,11 @@ class ProjectDetailViewController: UIViewController {
     let timeSectionHeaderTableViewCellIdentifier = "TimeSectionHeaderTableViewCell"
     let pageTitle = "Project Detail"
     let action1Title = "Ok"
+    let action2Title = "Cancel"
+    let deleteTimeAlertMessage = "Are you sure you want to delete the time?"
+    let deleteActionTile = "Yes"
     let emailSubject = "Invoice"
+    
     // MARK: - IBOutlet  -
     @IBOutlet weak var projectDetailTableView: UITableView! {
         didSet {
@@ -41,7 +45,7 @@ class ProjectDetailViewController: UIViewController {
             
         }
     }
-    // MARK: - computer variables  -
+    // MARK: - variables  -
     private var projectViewModel: ProjectViewModel? {
         didSet {
             self.projectDetailTableView?.reloadData()
@@ -56,7 +60,7 @@ class ProjectDetailViewController: UIViewController {
         return message
     }
 
-    // MARK: - override  -
+    // MARK: - overrides -
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setTitle()
@@ -169,6 +173,7 @@ extension ProjectDetailViewController: UITableViewDelegate {
         }
     }
 }
+// MARK: - CustomerInfoTableViewCellDelegate  -
 extension ProjectDetailViewController: CustomerInfoTableViewCellDelegate {
     func sendEmail() {
         self.sendEmailToCustomer()
@@ -180,7 +185,15 @@ extension ProjectDetailViewController: TimeTableViewCellDelegate {
         guard let projectId = self.projectViewModel?.id else {
             return
         }
-        self.presenter?.deleteTime(timeId: id, projectId: projectId)
+        let alertController = UIAlertController(title: nil, message: self.deleteTimeAlertMessage, preferredStyle: .alert)
+        let action1 = UIAlertAction(title: self.deleteActionTile, style: .default) { (action:UIAlertAction) in
+            self.presenter?.deleteTime(timeId: id, projectId: projectId)
+        }
+        let action2 = UIAlertAction(title: self.action2Title, style: .cancel, handler: nil)
+        alertController.addAction(action1)
+        alertController.addAction(action2)
+        alertController.popoverPresentationController?.sourceView = self.view
+        self.present(alertController, animated: true, completion: nil)
         
     }
 }
@@ -191,6 +204,7 @@ extension ProjectDetailViewController: TimeSectionHeaderTableViewCellDelegate {
     }
     
 }
+// MARK: - sending invoice email  -
 extension ProjectDetailViewController {
     func sendEmailToCustomer() {
     
@@ -208,6 +222,7 @@ extension ProjectDetailViewController {
     }
  
 }
+// MARK: - MFMailComposeViewControllerDelegate  -
 extension ProjectDetailViewController: MFMailComposeViewControllerDelegate {
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
@@ -216,7 +231,7 @@ extension ProjectDetailViewController: MFMailComposeViewControllerDelegate {
 }
 // MARK: - ProjectDetailPresenterDelegate  -
 extension ProjectDetailViewController: ProjectDetailPresenterDelegate {
-    func handleEmptyProjects() {
+    func handleEmptyProject() {
         self.projectViewModel = nil
     }
     
@@ -233,6 +248,4 @@ extension ProjectDetailViewController: ProjectDetailPresenterDelegate {
         alertController.popoverPresentationController?.sourceView = self.view
         self.present(alertController, animated: true, completion: nil)
     }
-    
-    
 }

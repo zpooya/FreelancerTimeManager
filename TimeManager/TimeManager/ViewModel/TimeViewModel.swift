@@ -7,7 +7,9 @@
 //
 
 import Foundation
-
+/**
+ **TimeViewModel** is the ViewModel which is used in **AddTimeViewController**.
+ */
 class TimeViewModel {
     var time: TimeModel
     var id: Int? {

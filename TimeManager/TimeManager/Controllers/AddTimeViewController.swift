@@ -14,7 +14,8 @@ class AddTimeViewController: UIViewController {
     let missingTimeMessage = "Please select how many hours you worked."
     let action1Title = "Ok"
     let action2Title = "Cancel"
-    // MARK: - IBOutlet  -
+    
+    // MARK: - IBOutlets  -
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var customNavigationBar: UINavigationBar! {
@@ -23,6 +24,7 @@ class AddTimeViewController: UIViewController {
         }
     }
     @IBOutlet weak var navItem: UINavigationItem!
+    
     // MARK: - variables  -
     private var timeViewModel: TimeViewModel?
     private var presenter: AddTimePresenter?
@@ -30,7 +32,7 @@ class AddTimeViewController: UIViewController {
     private var selectedTime = Date()
     private var projectId: Int?
     
-    // MARK: - override  -
+    // MARK: - overrides  -
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setPresenter()
@@ -75,6 +77,8 @@ extension AddTimeViewController {
         self.timePicker.timeZone = TimeZone(secondsFromGMT: 0)
         self.selectedTime = self.timeViewModel?.timeToShow ?? defaultTime
         self.timePicker.setDate(self.selectedTime, animated: true)
+        
+        
     }
     
     private func getPageTitle() {
@@ -83,6 +87,7 @@ extension AddTimeViewController {
     
     private func validation() {
         let components = Calendar.current.dateComponents([.hour, .minute], from: self.selectedTime)
+        self.selectedTime = self.timePicker.date
         if let hour = components.hour, hour > 0 {
             self.createOrUpdateTime()
             return
@@ -98,6 +103,7 @@ extension AddTimeViewController {
             self.present(alertController, animated: true, completion: nil)
         }
     }
+    
     private func createOrUpdateTime() {
         guard let projectId = self.projectId else {
             return
@@ -129,7 +135,7 @@ extension AddTimeViewController: UINavigationBarDelegate {
         return .topAttached
     }
 }
-// MARK: - Public Functions  -
+// MARK: - Public setContent  -
 extension AddTimeViewController {
     func setContent(timeViewModel: TimeViewModel?, projectId: Int) {
         self.timeViewModel = timeViewModel
