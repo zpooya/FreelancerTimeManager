@@ -531,6 +531,7 @@
                     <connections>
                         <outlet property="customNavigationBar" destination="cXo-El-MAS" id="0CO-y5-RkE"/>
                         <outlet property="datePicker" destination="kFI-w5-Xhp" id="HgF-0j-CMq"/>
+                        <outlet property="navItem" destination="UXP-qj-eL7" id="bDA-dh-oZc"/>
                         <outlet property="timePicker" destination="IVY-TS-8yl" id="0Q5-J0-wEh"/>
                     </connections>
                 </viewController>

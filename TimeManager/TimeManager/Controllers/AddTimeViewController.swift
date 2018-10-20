@@ -9,6 +9,11 @@
 import UIKit
 
 class AddTimeViewController: UIViewController {
+    // MARK: - constant variables  -
+    let missingTitle = "Missing Value"
+    let missingTimeMessage = "Please select how many hours you worked."
+    let action1Title = "Ok"
+    let action2Title = "Cancel"
     // MARK: - IBOutlet  -
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var timePicker: UIDatePicker!
@@ -17,17 +22,20 @@ class AddTimeViewController: UIViewController {
             self.customNavigationBar.delegate = self
         }
     }
+    @IBOutlet weak var navItem: UINavigationItem!
     // MARK: - variables  -
     private var timeViewModel: TimeViewModel?
     private var presenter: AddTimePresenter?
     private var selectedDate = Date()
     private var selectedTime = Date()
+    private var projectId: Int?
     // MARK: - override  -
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setPresenter()
         self.addTargetToPickers()
         self.setupView()
+        self.getPageTitle()
     }
   
 }
@@ -36,7 +44,7 @@ class AddTimeViewController: UIViewController {
 extension AddTimeViewController
 {
     @IBAction func done(_ sender: Any) {
-        self.presenter?.saveSelectedDateAndTime(timeViewModel: self.timeViewModel, date: self.selectedDate, time: self.selectedTime)
+        self.validation()
     }
     @IBAction func close(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -58,6 +66,34 @@ extension AddTimeViewController {
         let defaultTime = Date().setTime(hour: 0, min: 0) ?? Date()
         self.timePicker.date = self.timeViewModel?.timeToShow ?? defaultTime
     }
+    
+    private func getPageTitle() {
+        self.presenter?.getPageTitle(timeViewModel: self.timeViewModel)
+    }
+    
+    private func validation() {
+        let components = Calendar.current.dateComponents([.hour, .minute], from: self.selectedTime)
+        if let hour = components.hour, hour > 0 {
+            self.createOrUpdateTime()
+            return
+        } else if let minute = components.minute, minute > 0 {
+            self.createOrUpdateTime()
+            return
+        } else {
+            let alertController = UIAlertController(title: missingTitle, message: missingTimeMessage, preferredStyle: .alert)
+            let action1 = UIAlertAction(title: self.action1Title, style: .default) { (action:UIAlertAction) in
+            }
+            alertController.addAction(action1)
+            alertController.popoverPresentationController?.sourceView = self.view
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    private func createOrUpdateTime() {
+        guard let projectId = self.projectId else {
+            return
+        }
+        self.presenter?.saveOrUpdateSelectedDateAndTime(timeViewModel: self.timeViewModel, date: self.selectedDate, time: self.selectedTime, projectId: projectId)
+    }
 }
 // MARK: - objc Functions -
 @objc extension AddTimeViewController {
@@ -65,7 +101,7 @@ extension AddTimeViewController {
         self.selectedDate = sender.date
         let components = Calendar.current.dateComponents([.year, .month, .day], from: sender.date)
         if let day = components.day, let month = components.month, let year = components.year {
-            print("\(day) \(month) \(year)")
+            debugPrint("\(day) \(month) \(year)")
         }
     }
     
@@ -73,7 +109,7 @@ extension AddTimeViewController {
         self.selectedTime = sender.date
         let components = Calendar.current.dateComponents([.hour, .minute], from: sender.date)
         if let hour = components.hour, let minute = components.minute {
-            print("\(hour) \(minute)")
+            debugPrint("\(hour) \(minute)")
         }
     }
 }
@@ -91,16 +127,26 @@ extension AddTimeViewController {
 }
 // MARK: - AddTimePresenterDelegate  -
 extension AddTimeViewController: AddTimePresenterDelegate {
-    func showloading() {
-        
+    func successfullyCreatedOrUpdated(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action1 = UIAlertAction(title: self.action1Title, style: .default) { (action:UIAlertAction) in
+            self.dismiss(animated: true, completion: nil)
+        }
+        alertController.addAction(action1)
+        alertController.popoverPresentationController?.sourceView = self.view
+        self.present(alertController, animated: true, completion: nil)
     }
     
-    func success() {
-        
+    func failedToCreateOrUpdate(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action1 = UIAlertAction(title: self.action1Title, style: .default) { (action:UIAlertAction) in
+        }
+        alertController.addAction(action1)
+        alertController.popoverPresentationController?.sourceView = self.view
+        self.present(alertController, animated: true, completion: nil)
     }
     
-    func handleError() {
-        
+    func setPageTitle(title: String) {
+        self.navItem.title = title
     }
-    
 }

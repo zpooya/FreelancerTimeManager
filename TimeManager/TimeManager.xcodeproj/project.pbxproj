@@ -159,10 +159,10 @@
 		035FA6542178DCA2005B1BEB /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				03DA2AB92179FAD100212A94 /* AddTimePresenter.swift */,
 				03DA2ABF217A7EEC00212A94 /* ProjectsPresenter.swift */,
-				03DA2AC3217A9A9A00212A94 /* AddProjectPresenter.swift */,
 				03DA2AC5217A9AAA00212A94 /* ProjectDetailPresenter.swift */,
+				03DA2AC3217A9A9A00212A94 /* AddProjectPresenter.swift */,
+				03DA2AB92179FAD100212A94 /* AddTimePresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";

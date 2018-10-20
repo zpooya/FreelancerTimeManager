@@ -127,7 +127,13 @@ extension AddProjectViewController: AddProjectPresenterDelegate {
     }
     
     func failedToCreateOrUpdate(title: String, message: String) {
-        self.showAlert(title: title, message: message)
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action1 = UIAlertAction(title: self.action1Title, style: .default) { (action:UIAlertAction) in
+        }
+        alertController.addAction(action1)
+        alertController.popoverPresentationController?.sourceView = self.view
+        self.present(alertController, animated: true, completion: nil)
+        
     }
     
     
@@ -165,13 +171,5 @@ extension AddProjectViewController {
     }
     @objc private func dismissKeyboard() {
         self.view.endEditing(true)
-    }
-    private func showAlert(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action1 = UIAlertAction(title: self.action1Title, style: .default) { (action:UIAlertAction) in
-        }
-        alertController.addAction(action1)
-        alertController.popoverPresentationController?.sourceView = self.view
-        self.present(alertController, animated: true, completion: nil)
     }
 }

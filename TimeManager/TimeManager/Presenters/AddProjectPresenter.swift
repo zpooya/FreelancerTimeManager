@@ -75,6 +75,10 @@ extension AddProjectPresenter {
     private func updateProject(projectModel: ProjectModel) -> Bool {
         return self.dataManager.editProject(project: projectModel)
     }
+    
+}
+// MARK: - helper  -
+extension AddProjectPresenter {
     private func createProjectModel(projectTitle: String, projectDesc: String, customerName: String, customerMobile: String?, customerEmail: String?, projectId: Int?) -> ProjectModel {
         let projectModel = ProjectModel(id: projectId, title: projectTitle, desc: projectDesc, times: nil, customerName: customerName, customerMobile: customerMobile, customerEmail: customerEmail)
         return projectModel

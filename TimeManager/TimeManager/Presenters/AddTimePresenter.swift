@@ -9,15 +9,28 @@
 import Foundation
 
 protocol AddTimePresenterDelegate: class {
-    func showloading()
-    func success()
-    func handleError()
+    func successfullyCreatedOrUpdated(title: String, message: String)
+    func failedToCreateOrUpdate(title: String, message: String)
+    func setPageTitle(title: String)
 }
 protocol AddTimePresenterProtocol: class {
-    func saveSelectedDateAndTime(timeViewModel: TimeViewModel?, date: Date, time: Date)
+    func saveOrUpdateSelectedDateAndTime(timeViewModel: TimeViewModel?, date: Date, time: Date, projectId: Int)
+    func getPageTitle(timeViewModel: TimeViewModel?)
+
 }
 class AddTimePresenter {
-     private weak var delegate: AddTimePresenterDelegate?
+    // MARK: - Constant Variables  -
+    let successfullyCreated = "Time Successfully Created"
+    let successfullyUpdated = "Time Successfully Updated"
+    let successTitle = "Success"
+    let failedToCreate = "Failed to Create Time"
+    let failedToUpdate = "Failed to Update Time"
+    let failedTitle = "Error"
+    let updateTitle = "Update Time"
+    let createTitle = "Create Time"
+    
+    // MARK: - private variables  -
+    private weak var delegate: AddTimePresenterDelegate?
     private var dataManager = DataManager()
     init(delegate: AddTimePresenterDelegate) {
         self.delegate = delegate
@@ -26,20 +39,53 @@ class AddTimePresenter {
 
 // MARK: - AddTimePresenterProtocol  -
 extension AddTimePresenter: AddTimePresenterProtocol {
-    public func saveSelectedDateAndTime(timeViewModel: TimeViewModel?, date: Date, time: Date) {
-        if let id = timeViewModel?.id  {
-            self.updateDateAndTime(id: id, date: date, time: time)
+    
+    func saveOrUpdateSelectedDateAndTime(timeViewModel: TimeViewModel?, date: Date, time: Date, projectId: Int) {
+        let timeModel = self.createTimeModel(date: date, time: time, id: timeViewModel?.id)
+        if timeViewModel?.id != nil {
+            let timeUpdated = self.updateDateAndTime(timeModel: timeModel, projectId: projectId)
+            if timeUpdated {
+                self.delegate?.successfullyCreatedOrUpdated(title: successTitle, message: successfullyUpdated)
+            } else {
+                self.delegate?.failedToCreateOrUpdate(title: failedTitle, message: failedToUpdate)
+            }
         } else {
-            self.createDateAndTime(date: date, time: time)
+            let timeCreated = self.createDateAndTime(timeModel: timeModel, projectId: projectId)
+            if timeCreated {
+                self.delegate?.successfullyCreatedOrUpdated(title: successTitle, message: successfullyCreated)
+            } else {
+                self.delegate?.failedToCreateOrUpdate(title: failedTitle, message: failedToCreate)
+
+            }
         }
     }
+    
+    func getPageTitle(timeViewModel: TimeViewModel?) {
+        if timeViewModel?.id != nil {
+            self.delegate?.setPageTitle(title: self.updateTitle)
+        } else {
+            self.delegate?.setPageTitle(title: self.createTitle)
+        }
+    }
+   
 }
 // MARK: - Connecting to DataManager  -
 extension AddTimePresenter {
-    private func createDateAndTime(date: Date, time: Date) {
-        // (todo).call datamanager
+    private func createDateAndTime(timeModel: TimeModel, projectId: Int) -> Bool {
+        return dataManager.addTimeToProject(projectId: projectId, timeModel: timeModel)
     }
-    private func updateDateAndTime(id: Int, date: Date, time: Date) {
-        // (todo). callUpdateDateAndTime
+    private func updateDateAndTime(timeModel: TimeModel, projectId: Int) -> Bool{
+        return self.dataManager.editTime(projectId: projectId, timeModel: timeModel)
+    }
+}
+// MARK: - helper  -
+extension AddTimePresenter {
+    private func createTimeModel(date: Date, time: Date, id: Int?) -> TimeModel {
+        let components = Calendar.current.dateComponents([.hour, .minute], from: time)
+        let hour = components.hour ?? 0
+        let minute = components.minute ?? 0
+        let timeModel = TimeModel(id: id, date: date.string, hourSpent: hour, minuteSpent: minute)
+        return timeModel
+        
     }
 }
