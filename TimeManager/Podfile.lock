@@ -1,0 +1,17 @@
+PODS:
+  - MagicalRecord (2.3.2):
+    - MagicalRecord/Core (= 2.3.2)
+  - MagicalRecord/Core (2.3.2)
+  - SkyFloatingLabelTextField (3.6.0)
+
+DEPENDENCIES:
+  - MagicalRecord (~> 2.3)
+  - SkyFloatingLabelTextField (~> 3.6)
+
+SPEC CHECKSUMS:
+  MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
+  SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
+
+PODFILE CHECKSUM: 324d942b8778a3270d14261ca0e084feb9cf10e8
+
+COCOAPODS: 1.4.0
